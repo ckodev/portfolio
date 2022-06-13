@@ -1,0 +1,47 @@
+@use '../base/variables' as *;
+
+
+.main-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    
+   
+
+    ul {
+        list-style: none;
+        display: flex; 
+        justify-content: space-around;
+        padding: 0;  
+    }
+
+    a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+       
+
+        &:visited {
+            color: $black;
+        }
+
+        &.active path {
+            fill: $MainAccentColor;
+        }
+    }
+
+    svg {
+        width: 2rem;
+        height: 1.1rem;
+        align-self: center;
+    }
+
+    p {
+        font-size: .6rem;
+        align-self: center;
+        padding-top: .2rem;
+    }
+
+  
+}

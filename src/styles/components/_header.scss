@@ -1,0 +1,15 @@
+@use '../base/variables' as *;
+
+
+header {
+
+    #cko {
+        fill: $MainAccentColor;
+    }
+
+    svg {
+        width: 8rem;
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
+}

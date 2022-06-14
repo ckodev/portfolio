@@ -13,24 +13,28 @@ function Nav() {
             <ul>
                 <li>
                     <NavLink to="/">
+                    <span className='menu-active'></span>
                         <HomeIcon/>
                         <p>Home</p>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/1">
+                    <span className='menu-active'></span>
                         <AboutIcon/>
                         <p>About</p>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/2">
+                    <span className='menu-active'></span>
                         <ProjectsIcon/>
                         <p>Projects</p>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/3">
+                    <span className='menu-active'></span>
                         <ContactIcon/>
                         <p>Contact</p>
                     </NavLink>

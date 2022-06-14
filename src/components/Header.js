@@ -8,7 +8,7 @@ function Header() {
 
     <header>
         <h1 className='sr-only'>ckodev</h1>
-        <NavLink to='/'><HomeLogo /></NavLink>
+        <NavLink to='/PageHome'><HomeLogo /></NavLink>
         
     </header>
 

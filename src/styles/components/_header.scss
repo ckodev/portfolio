@@ -2,6 +2,11 @@
 
 
 header {
+    background-color: $bodyBackground;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding-bottom: .5rem;
 
     #cko {
         fill: $MainAccentColor;

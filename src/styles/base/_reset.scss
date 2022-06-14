@@ -24,7 +24,13 @@ html {
       border-spacing: 0;
   }
   .wrapper {
-      margin: 0;
+      position: relative;
+      max-width: 100rem;
+      margin: auto;
+  }
+
+  .display-linebreak {
+    white-space: pre-line;
   }
 
   

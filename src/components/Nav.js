@@ -12,7 +12,7 @@ function Nav() {
         <nav className='main-nav'>
             <ul>
                 <li>
-                    <NavLink to="/">
+                    <NavLink to="/PageHome">
                     <span className='menu-active'></span>
                         <HomeIcon/>
                         <p>Home</p>

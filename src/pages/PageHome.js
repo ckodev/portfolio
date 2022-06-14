@@ -1,10 +1,42 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+import Loading from '../components/Loading'
 
 function PageHome() {
+
+  const restPath = ''
+  const [restData, setData] = useState([])
+  const [isLoaded, setLoadStatus] = useState(false)
+
+  useEffect(() => {
+      const fetchData = async () => {
+          const response = await fetch(restPath)
+          if ( response.ok ) {
+              const data = await response.json()
+              setData(data)
+              setLoadStatus(true)
+          } else {
+              setLoadStatus(false)
+          }
+      }
+      fetchData()
+  }, [restPath])
+
+
   return (
-    <div>
-        <h1>Home</h1>
-    </div>
+    <>
+      { isLoaded ?
+        <article>
+            <h1 >{restData.title.rendered}</h1>
+            <div className="entry-content">
+                
+                
+            </div>
+        </article>
+      : 
+        <Loading />
+      }
+    </>
   )
 }
 

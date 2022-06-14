@@ -13,12 +13,12 @@ function AppRouter() {
     <BrowserRouter >
         <div className='wrapper'>
             <Header />
-            <Nav />
+            
 
             <Routes>
-                <Route path='/' component={<PageHome/>}/>
+                <Route path='/PageHome' element={<PageHome/>}/>
             </Routes>
-
+            <Nav />
         </div>
     </BrowserRouter>
   )

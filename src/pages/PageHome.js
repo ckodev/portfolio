@@ -9,6 +9,7 @@ function PageHome() {
   const [isLoadedFirst, setLoadStatus1] = useState(false)
   const [isLoadedSecond, setLoadStatus2] = useState(false)
   const [isLoadedThird, setLoadStatus3] = useState(false)
+  
 
 
   const restPath = 'http://ckodev.com/ckodev/wp-json/wp/v2/pages/98?_embed';
@@ -65,25 +66,54 @@ function PageHome() {
   }, [])
 
 
+    const copyToClipboard = (content) => {
+        const el = document.createElement("textarea");
+        el.value = content;
+        el.setAttribute("readonly", "");
+        el.style.position = "absolute";
+        el.style.left = "-9999px";
+        document.body.appendChild(el);
+        el.select();
+        el.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        document.body.removeChild(el);
+        
+    };
+
+    const handleClick = () => {
+        copyToClipboard(restData2.acf.email);
+    };
+
+
 
 
   return (
     <>
+
+
       { isLoadedFirst && isLoadedSecond && isLoadedThird ?
         <div className='home-page-content-wrapper'>
-          <section className='about-me'>
+
+          <section className='landing' id='landing'>
               <h2>{restData.acf.title}</h2>
               <p className='display-linebreak'>{restData.acf.about_me}</p>
           </section>
 
-          <section className='project-cards'>
+          <section className='about-me' id='about-me'>
+              <h2>{restData.acf.title}</h2>
+              <p className='display-linebreak'>{restData.acf.about_me}</p>
+          </section>
+
+          <section className='project-cards' id='project-cards'>
+              <h2>Featured Projects</h2>
               {restData3.map(project=> <ProjectCard key={project.id} project={project}/>)}
           </section>
 
-          <section className='contact'>
+          <section className='contact-me' id='contact-me'>
               <h2>{restData2.acf.title}</h2>
               <p className='display-linebreak'>{restData2.acf.message}</p>
-              <p>{restData2.acf.email}</p>
+              <p onClick={handleClick}>ckodeveloper@gmail.com
+              </p>
           </section>
 
         </div>

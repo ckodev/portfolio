@@ -1,0 +1,49 @@
+import React from 'react'
+import { useState, useEffect } from 'react'
+import Loading from '../components/Loading'
+
+function PageAbout() {
+
+
+    const [isLoaded, setLoaded] = useState(false)
+    
+    const restPath = 'http://ckodev.com/ckodev/wp-json/wp/v2/pages/98?_embed';
+    const [restData, setData] = useState([])
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(restPath)
+            if ( response.ok ) {
+                const data = await response.json()
+                setData(data)
+                setLoaded(true)
+            } else {
+                setLoaded(false)
+            }
+        }
+        fetchData()
+    }, [])
+  
+  
+  
+    return (
+      <>
+  
+  
+        { isLoaded ?
+          <div className='home-page-content-wrapper'>
+  
+            <section className='about-me' id='about-me'>
+                <h2>{restData.acf.title}</h2>
+                <p className='display-linebreak'>{restData.acf.about_me}</p>
+            </section>
+  
+          </div>
+        : 
+          <Loading />
+        }
+      </>
+    )
+  }
+  
+  export default PageAbout

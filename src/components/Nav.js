@@ -1,49 +1,48 @@
 import React from 'react'
-// import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import AboutIcon from '../svgs/AboutIcon'
 import HomeIcon from '../svgs/HomeIcon'
 import ProjectsIcon from '../svgs/ProjectsIcon'
 import ContactIcon from '../svgs/ContactIcon'
-import { Link, animateScroll as scroll } from "react-scroll";
+// import {useState} from 'react'
+
 
 
 
 
 function Nav() {
-
-
     
   return (
     <div>
         <nav className='main-nav'>
             <ul>
-                <li>
-                    <Link to="landing" spy={true} smooth={true}  duration={700} offset={-100}>
+                <li >
+                    <NavLink smooth to="/" >
                     <span className='menu-active'></span>
                         <HomeIcon/>
                         <p>Home</p>
-                    </Link>
+                    </NavLink>
                 </li>
-                <li>
-                    <Link to="about-me" spy={true} smooth={true} duration={700} offset={-100}>
+                <li >
+                    <NavLink to="/PageAbout" >
                     <span className='menu-active'></span>
                         <AboutIcon/>
                         <p>About</p>
-                    </Link>
+                    </NavLink>
                 </li>
-                <li>
-                    <Link to="project-cards" spy={true} smooth={true} duration={700} offset={-100}>
+                <li >
+                    <NavLink smooth to="/PageProjects" >
                     <span className='menu-active'></span>
                         <ProjectsIcon/>
                         <p>Projects</p>
-                    </Link>
+                    </NavLink>
                 </li>
-                <li>
-                    <Link to="contact-me" spy={true} smooth={true} duration={700} offset={-100}>
+                <li >
+                    <NavLink smooth to="/PageContact" >
                     <span className='menu-active'></span>
                         <ContactIcon/>
                         <p>Contact</p>
-                    </Link>
+                    </NavLink>
                 </li>
                
                 

@@ -1,10 +1,12 @@
+import loadingImg from "../images/lightning-loading.gif"
+
 const Loading = () => {
     
     return (
    
        
             <div className="loading-container">
-                 <img src="lightning-loading.gif" alt="Loading" className="loading" id="loading" />
+                 <img src={loadingImg} alt="Loading" className="loading" id="loading" />
             </div>
       
       

@@ -15,6 +15,20 @@
         margin: 0;
     }
 
+    // li.selected {
+    //     path {
+    //         fill: $MainAccentColor;
+    //     } 
+    //     .menu-active {
+    //         background-color: $MainAccentColor;
+    //         animation: createBox .5s ease;
+        
+    //         .menu-active {
+    //             display: none;
+    //         }
+    //     }
+    // }
+
     a {
         text-decoration: none;
         display: flex;
@@ -24,10 +38,9 @@
             color: $black;
         }
 
-        &.active path{
+        &:active path {
             fill: $MainAccentColor;
         }
-
         .menu-active {
             background-color: $bodyBackground;
             width: 3rem; 
@@ -35,15 +48,16 @@
             margin-bottom: .5rem;
             border-radius: 4px;
         }
-
-        &.active .menu-active {
+        &:active .menu-active {
             background-color: $MainAccentColor;
             animation: createBox .5s ease;
-        
+
             .menu-active {
                 display: none;
             }
         }
+
+         
 
         @keyframes createBox {
             from {

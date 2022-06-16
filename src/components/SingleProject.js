@@ -1,6 +1,7 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
 import {useState, useEffect} from 'react'
+import Loading from './Loading';
 
 function SingleProject() {
 
@@ -23,11 +24,30 @@ function SingleProject() {
         fetchData()
     }, [restPath])
 
+
+
+    console.log(window.location.pathname)
+
   return (
-    <div>
+
+    <>
+
+    { isLoaded ?
+    
+
+    <div className='single-project-container'>
         
+         <h2>{restData.title.rendered}</h2>
+
     </div>
+
+    :
+
+    <Loading />
+    }
+    </>
   )
+    
 }
 
 export default SingleProject

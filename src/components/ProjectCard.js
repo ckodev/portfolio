@@ -10,7 +10,7 @@ function ProjectCard({project}) {
    
 
     <div className='project-card'>
-      <NavLink to='/'>
+      <NavLink to={`/SingleProject/${project.id}`}>
         <img src={imgPath} alt={imgAltText} />
         <h2>{project.title.rendered}</h2>
         <p>{project.acf.custom_excerpt}</p>

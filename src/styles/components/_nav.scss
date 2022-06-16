@@ -38,7 +38,7 @@
             color: $black;
         }
 
-        &:active path {
+        &.active path {
             fill: $MainAccentColor;
         }
         .menu-active {
@@ -48,9 +48,9 @@
             margin-bottom: .5rem;
             border-radius: 4px;
         }
-        &:active .menu-active {
+        &.active .menu-active {
             background-color: $MainAccentColor;
-            animation: createBox .5s ease;
+            animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
 
             .menu-active {
                 display: none;

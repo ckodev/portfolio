@@ -4,7 +4,7 @@ import AboutIcon from '../svgs/AboutIcon'
 import HomeIcon from '../svgs/HomeIcon'
 import ProjectsIcon from '../svgs/ProjectsIcon'
 import ContactIcon from '../svgs/ContactIcon'
-// import {useState} from 'react'
+
 
 
 

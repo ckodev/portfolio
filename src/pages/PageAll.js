@@ -4,7 +4,7 @@ import Loading from '../components/Loading'
 import ProjectCard from '../components/ProjectCard'
 
 
-function PageProjects() {
+function PageAll() {
 
 
     const [isLoaded, setLoaded] = useState(false)
@@ -47,4 +47,4 @@ function PageProjects() {
     )
   }
   
-  export default PageProjects
+  export default PageAll

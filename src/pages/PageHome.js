@@ -33,13 +33,13 @@ function PageHome() {
 
 
       { isLoaded ?
-        <div className='home-page-content-wrapper'>
 
-          <section className='landing' id='landing'>
-              <h2>{restData.id}</h2>
-          </section>
-
+        <div className='entry-content'>
+            <section className='landing' id='landing'>
+                <h2>{restData.id}</h2>
+            </section>
         </div>
+
       : 
         <Loading />
       }

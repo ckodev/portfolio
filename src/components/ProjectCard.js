@@ -13,7 +13,7 @@ function ProjectCard({project}) {
       <NavLink to={`/SingleProject/${project.id}`}>
         <img src={imgPath} alt={imgAltText} />
         <h2>{project.title.rendered}</h2>
-        <p>{project.acf.custom_excerpt}</p>
+        <p className='display-linebreak'>{project.acf.custom_excerpt}</p>
         <button>{project.acf.button}</button>
       </NavLink>
     </div>

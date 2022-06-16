@@ -24,18 +24,19 @@ function PageAbout() {
         fetchData()
     }, [])
   
-  
+   
   
     return (
       <>
   
   
         { isLoaded ?
-          <div className='home-page-content-wrapper'>
+          <div className='entry-content'>
   
             <section className='about-me' id='about-me'>
                 <h2>{restData.acf.title}</h2>
                 <p className='display-linebreak'>{restData.acf.about_me}</p>
+              
             </section>
   
           </div>

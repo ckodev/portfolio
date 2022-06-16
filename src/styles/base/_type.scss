@@ -4,15 +4,18 @@
 
 body {
     font-family: $Montserrat;
-    background-color: $bodyBackground;
-
-    
+    background-color: $bodyBackground; 
 }
 
 .wrapper {
     position: relative;
     max-width: 100rem;
     margin: auto;
+}
+
+.entry-content {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
 }
 
 h1, h2, h3, h4 {

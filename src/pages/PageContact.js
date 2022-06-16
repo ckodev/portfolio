@@ -51,12 +51,14 @@ function PageContact() {
   
   
         { isLoaded ?
-           <section className='contact-me' id='contact-me'>
-            <h2>{restData.acf.title}</h2>
-            {/* <img src={imgPath} alt="" /> */}
-            <p className='display-linebreak'>{restData.acf.message}</p>
-            <p onClick={handleClick}>{restData.acf.email}</p>
-            </section>
+           <div className="entry-content">
+             <section className='contact-me' id='contact-me'>
+                <h2>{restData.acf.title}</h2>
+                {/* <img src={imgPath} alt="" /> */}
+                <p className='display-linebreak'>{restData.acf.message}</p>
+                <p onClick={handleClick}>{restData.acf.email}</p>
+              </section>
+           </div>
         : 
           <Loading />
         }

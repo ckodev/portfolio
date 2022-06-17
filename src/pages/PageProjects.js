@@ -4,7 +4,7 @@ import Loading from '../components/Loading'
 import ProjectCard from '../components/ProjectCard'
 
 
-function PageProjects() {
+function PageProjects({handleProjectData}) {
 
 
     const [isLoaded, setLoaded] = useState(false)
@@ -19,13 +19,21 @@ function PageProjects() {
               const data = await response.json()
               setData(data)
               setLoaded(true)
+              
           } else {
               setLoaded(false)
           }
       }
       fetchData()
   }, [])
-  
+
+
+  const sendProjectData = () => {
+
+    let sendData = restData;
+    handleProjectData(sendData)
+
+  }
   
   
     return (
@@ -34,7 +42,7 @@ function PageProjects() {
   
         { isLoaded ?
           <div className='entry-content'>
-            <section className='project-cards' id='project-cards'>
+            <section className='project-cards' id='project-cards' onLoad={sendProjectData}>
                 <h2>Featured Projects</h2>
                 {restData.map(project=> <ProjectCard key={project.id} project={project}/>)}
                 

@@ -7,6 +7,7 @@ import PageAbout from '../pages/PageAbout';
 import PageHome from '../pages/PageHome';
 import PageProjects from '../pages/PageProjects';
 import PageContact from '../pages/PageContact';
+import {useState} from 'react'
 
 
 
@@ -14,7 +15,11 @@ import PageContact from '../pages/PageContact';
 
 function AppRouter() {
 
+  const [projectData, setProjectData] = useState([])
 
+const handleProjectData = (newData) => {
+      setProjectData(newData);
+}
 
 
   return (
@@ -25,8 +30,8 @@ function AppRouter() {
             <Routes>
                 <Route path='/' element={<PageHome />}/>
                 <Route path='/PageAbout' element={<PageAbout  />}/>
-                <Route path='/PageProjects' element={<PageProjects  />}/>
-                <Route path='/SingleProject/:id' element={<SingleProject  />}/>
+                <Route path='/PageProjects' element={<PageProjects handleProjectData={handleProjectData}/>}/>
+                <Route path='/SingleProject/:id' element={<SingleProject projectData={projectData} />}/>
                 <Route path='/PageContact' element={<PageContact  />}/>
             </Routes>
             

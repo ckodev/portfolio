@@ -8,15 +8,17 @@ import SliderGallery from './SliderGallery';
 // import {Link} from 'react-router-dom' 
 
 
-function SingleProject() {
+function SingleProject({projectData}) {
 
     const { id } = useParams();
     const restPath = `https://ckodev.com/ckodev/wp-json/wp/v2/ckodev-project/${id}?_embed`
     const [restData, setData] = useState([])
+
     const [isLoaded, setLoadStatus] = useState(false)
+    const [isLoaded2, setLoaded2] = useState(false)
 
 
-
+  
    
 
     useEffect(() => {
@@ -35,15 +37,34 @@ function SingleProject() {
         fetchData()
     }, [restPath])
 
+    
+    
+    const restPath2 = 'https://ckodev.com/ckodev/wp-json/wp/v2/ckodev-project?_embed'
+    const [restData2, setData2] = useState([])
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(restPath2)
+            if ( response.ok ) {
+                const data = await response.json()
+                setData2(data)
+                setLoaded2(true)
+                
+            } else {
+                setLoaded2(false)
+            }
+        }
+        fetchData()
+    }, [])
+
 
 
   return (
 
     <>
 
-    { isLoaded ?
-  
-
+    { isLoaded && isLoaded2 ?
 
     <div className='entry-content'>
         
@@ -76,7 +97,7 @@ function SingleProject() {
         <p className='display-linebreak'>{restData.acf.development}</p>
 
         {/* slider section - links to my other projects */}
-        <SliderGallery />
+        <SliderGallery projectData={restData2} />
         
         
     </div>

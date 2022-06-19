@@ -1,2 +1,14 @@
 
 
+.slider {
+    overflow: auto;
+    white-space: nowrap;
+
+    .slider-image-link {
+        display: inline-block;
+        text-align: center;
+        
+        text-decoration: none;
+    }
+}
+

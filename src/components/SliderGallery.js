@@ -20,8 +20,9 @@ function SliderGallery({projectData}) {
       
         {projectData.map((slide, index) => {
           return(
-            <Link to={`/SingleProject/${slide.id}`} onClick={scrollToTop}>
-           <img  key={index} className="slider-image" src={slide._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url} alt={slide._embedded['wp:featuredmedia'][0].alt_text} />
+            <Link className="slider-image-link" to={`/SingleProject/${slide.id}`} onClick={scrollToTop}>
+              <img key={index}  src={slide._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url} alt={slide._embedded['wp:featuredmedia'][0].alt_text} />
+              <p>{slide.title.rendered}</p>
             </Link>
           )
         })}

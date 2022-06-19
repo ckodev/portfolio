@@ -5,7 +5,7 @@ import Loading from './Loading';
 import ProjectHighlights from './ProjectHighlights';
 import Tools from './Tools';
 import SliderGallery from './SliderGallery';
-// import {Link} from 'react-router-dom' 
+
 
 
 function SingleProject({projectData}) {

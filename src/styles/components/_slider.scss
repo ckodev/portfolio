@@ -1,14 +1,44 @@
-
+@use '../base/variables' as *;
 
 .slider {
     overflow: auto;
     white-space: nowrap;
 
-    .slider-image-link {
+    @include tabletQuery {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+
+    a {
+
         display: inline-block;
         text-align: center;
-        
-        text-decoration: none;
+        text-decoration: none; 
+        border-radius: 4px;
+
+        &:visited {
+            color: $black;
+        }
+
+        img {
+            border-radius: 4px;
+            width: 95%;
+            max-width: 9rem;
+        }
+
+        p {
+            text-decoration: none;
+            text-align: left;
+            padding: .25rem .5rem;
+            font-size: .8rem;
+
+           
+        }
     }
+
+    
+
+
 }
 

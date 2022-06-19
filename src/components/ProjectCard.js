@@ -1,20 +1,25 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 
+
 function ProjectCard({project}) {
 
-    const imgPath = project._embedded['wp:featuredmedia'][0].source_url
-    const imgAltText = project._embedded['wp:featuredmedia'][0].alt_text
+    const imgPath = project.acf.project_card_thumbnail.url
+    const imgAltText = project.acf.project_card_thumbnail.alt
 
   return (
    
 
     <div className='project-card'>
       <NavLink to={`/SingleProject/${project.id}`}>
-        <img src={imgPath} alt={imgAltText} />
+        <div className='card-left'>
+            <img src={imgPath} alt={imgAltText} />
+        </div>
         <h2>{project.title.rendered}</h2>
-        <p className='display-linebreak'>{project.acf.custom_excerpt}</p>
-        <button>{project.acf.button}</button>
+        <span>
+          <p className='display-linebreak'>{project.acf.custom_excerpt}</p>
+          <button >{project.acf.button}</button>
+        </span>
       </NavLink>
     </div>
 
@@ -23,3 +28,14 @@ function ProjectCard({project}) {
 }
 
 export default ProjectCard
+
+
+
+
+
+
+
+
+
+
+

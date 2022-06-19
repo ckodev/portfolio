@@ -1,0 +1,91 @@
+@use '../base/variables' as *;
+
+
+
+
+.project-card {
+    position: relative;
+    padding: 0.6rem 1rem;
+    
+    a {
+        display: flex;
+        height: 6.25rem;
+        border: 1px solid $black;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: -.2px 1px 3px rgb(0, 0, 0, 0.5);
+        text-decoration: none;
+
+        &:visited {
+            color: $black;
+        }
+    }
+
+    h2 {
+        position: absolute;
+        width: 2rem;
+        font-size: 1rem;
+        color: $bodyBackground;
+        text-shadow: .5px 1px 1px rgb(0, 0, 0, 0.5);
+        padding: .2rem;
+    }
+
+    .card-left {
+        position: relative;
+        overflow: hidden;
+        width: 50%;
+        height: 6.25rem;
+        background-color: $MainAccentColor;
+
+        img {position: absolute;
+            width: 60%;
+            max-width: 5rem;
+            bottom: -3px;
+            right: -5px;
+            transform: rotate(20deg);
+            box-shadow: 5px 5px 10px black;
+            border-radius: 3px 
+        }
+    }
+
+    span {
+        display: flex;
+        flex-wrap: wrap;
+        
+        // flex-direction: column;
+        // justify-content: center;
+        width: 100%;
+        background-color: $bodyBackground; 
+
+        p {
+            align-self: center;
+            font-size: .7rem;
+            padding: 0 1rem;
+    
+        }
+    
+        button {
+            align-self: center;
+            justify-self: flex-end;
+            background: none;
+            border: none;
+            font-size: .75rem;
+            width: fit-content;
+            bottom: 0;
+            left: 0;
+            margin-left: auto;
+            padding: 0 1rem;
+            margin-top: .5rem;
+            cursor: pointer;
+        }
+    }
+
+   
+}
+
+
+
+
+
+
+

@@ -5,6 +5,8 @@
 body {
     font-family: $Montserrat;
     background-color: $bodyBackground; 
+    max-width: 1200px;
+    margin: auto;
 }
 
 .wrapper {

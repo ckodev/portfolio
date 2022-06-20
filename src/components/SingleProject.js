@@ -56,7 +56,7 @@ function SingleProject({projectData}) {
             }
         }
         fetchData()
-    }, [])
+    }, [restPath2])
 
  
 
@@ -68,36 +68,30 @@ function SingleProject({projectData}) {
 
     <div className='entry-content'>
         
-        {/* Project title */}
-        <h2>{restData.title.rendered}</h2>
-
-        {/* featured image */}
-        <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
-
-        {/* project overview */}
-        <p className='display-linebreak'>{restData.acf.project_overview}</p>
-
-        {/* tools used */}
-        <div>{restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}</div>
-
-        {/* Links to Live site & git hub */}
-        <a href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
-        <a href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
-
-        {/* Reflection Section */}
-        <h3>{restData.acf.reflection_heading}</h3>
-        <p className='display-linebreak'>{restData.acf.project_reflection}</p>  
-
-        {/* Project Highlights */}
-        <h2>{restData.acf.project_highlights_heading}</h2>
-        <div>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
-
-        {/* development section */}
-        <h3>{restData.acf.development_heading}</h3>
-        <p className='display-linebreak'>{restData.acf.development}</p>
-
-        {/* slider section - links to my other projects */}
-        <SliderGallery projectData={restData2} />
+        <section className='single-project-container'>
+            {/* Project title */}
+            <h2 className='project-title'>{restData.title.rendered}</h2>
+            {/* featured image */}
+            <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
+            {/* project overview */}
+            <p className='display-linebreak'>{restData.acf.project_overview}</p>
+            {/* tools used */}
+            <div className='tool-tile-container'>{restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}</div>
+            {/* Links to Live site & git hub */}
+            <a href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
+            <a href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
+            {/* Reflection Section */}
+            <h3>{restData.acf.reflection_heading}</h3>
+            <p className='display-linebreak'>{restData.acf.project_reflection}</p>
+            {/* Project Highlights */}
+            <h2>{restData.acf.project_highlights_heading}</h2>
+            <div>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
+            {/* development section */}
+            <h3>{restData.acf.development_heading}</h3>
+            <p className='display-linebreak'>{restData.acf.development}</p>
+            {/* slider section - links to my other projects */}
+            <SliderGallery projectData={restData2} />
+        </section>
         
         
     </div>

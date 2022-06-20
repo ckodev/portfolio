@@ -1,0 +1,63 @@
+@use '../base/variables' as *;
+
+.single-project-container {
+    padding: .5rem;
+
+    .project-title {
+        position: fixed;
+        top: 1.25rem;
+        right: 1rem;
+        font-size: 1rem;
+        z-index: 20;
+
+        @include desktopQuery {
+            right: initial;
+            margin-right: auto;
+            margin-left: 9rem;
+        }
+    }
+
+    img {
+        display: block;
+        margin: auto;
+    }
+
+    p {
+        padding: 1rem
+    }
+
+    .tool-tile-container {
+        display: flex;
+        justify-content: center;
+        gap: .5rem;
+
+        .tool-tile {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            
+
+            img {
+                width: 3.5rem;
+                margin: auto;
+                height: -webkit-fill-available;
+                border: 1px solid $black;
+                border-radius: 5px;
+                padding: .5rem;
+                background-color: $MainAccentColor;
+
+            }
+    
+            h3 {
+                font-size: .65rem;
+                padding: 0;
+                text-align: center;
+                font-weight: 400;
+            }
+        }
+    }
+
+   
+   
+
+}

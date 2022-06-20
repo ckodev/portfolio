@@ -43,7 +43,7 @@ function PageProjects({handleProjectData}) {
         { isLoaded ?
           <div className='entry-content'>
             <section className='project-cards' id='project-cards' onLoad={sendProjectData}>
-                <h2>Featured Projects</h2>
+                <h2 className='featured-project'>Featured Projects</h2>
                 {restData.map(project=> <ProjectCard key={project.id} project={project}/>)}
                 
             </section>

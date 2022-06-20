@@ -9,12 +9,8 @@ function Tools({tool}) {
    
 
     <div className='tool-tile'>
-
-        
         <img src={tool.tool_image.url} alt={tool.tool_image.alt} />
-        <p>{tool.tool_title}</p>
-        
-        
+        <h3>{tool.tool_title}</h3> 
     </div>
 
 

@@ -1,0 +1,18 @@
+
+.about-me-container {
+    padding: 1rem;
+
+    .about-me {
+        position: fixed;
+        top: 1.25rem;
+        right: 1rem;
+        font-size: 1rem;
+        z-index: 20;
+
+        @include desktopQuery {
+            right: initial;
+            margin-right: auto;
+            margin-left: 9rem;
+        }
+    }
+}

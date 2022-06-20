@@ -9,6 +9,7 @@ function PageContact() {
     
     const restPath = 'http://ckodev.com/ckodev/wp-json/wp/v2/pages/102?_embed';
     const [restData, setData] = useState([])
+  
     
     useEffect(() => {
         const fetchData = async () => {
@@ -42,9 +43,9 @@ function PageContact() {
     const handleClick = () => {
         copyToClipboard(restData.acf.email);
     };
-  
-    // const imgPath = restData._embedded['wp:featuredmedia'][0].link;
-    // console.log(imgPath);
+
+ 
+    
   
     return (
       <>
@@ -52,11 +53,16 @@ function PageContact() {
   
         { isLoaded ?
            <div className="entry-content">
-             <section className='contact-me' id='contact-me'>
-                <h2>{restData.acf.title}</h2>
-                {/* <img src={imgPath} alt="" /> */}
-                <p className='display-linebreak'>{restData.acf.message}</p>
+             <section className='contact-me-container' id='contact-me'>
+                <h1 className='contact-me'>{restData.acf.h1}</h1>
+                <h2 className=''>{restData.acf.h2}</h2>
+                <p className='display-linebreak'>{restData.acf.message_1}</p>
+                <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
+                <button onClick={handleClick}>Copy email address</button>
                 <p onClick={handleClick}>{restData.acf.email}</p>
+                <a href={`mailto:${restData.acf.email}?subject=The%20Matrix%20Doc?&body=I%20look%20forward%20to%20hearing%20from%20you!`}><button>Open email client</button></a>
+               
+                <p className='display-linebreak'>{restData.acf.message_2}</p>
               </section>
            </div>
         : 

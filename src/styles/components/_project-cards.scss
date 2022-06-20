@@ -1,13 +1,30 @@
 @use '../base/variables' as *;
 
 
+.project-cards {
+    vertical-align: middle;
 
+    .featured-project {
+        position: fixed;
+        top: 1.25rem;
+        right: 1rem;
+        font-size: 1rem;
+        z-index: 20;
+
+        @include desktopQuery {
+            right: initial;
+            margin-right: auto;
+            margin-left: 9rem;
+        }
+    }
+}
 
 .project-card {
     position: relative;
     padding: 0.6rem 1rem;
     
     a {
+        color: black;
         display: flex;
         height: 6.25rem;
         border: 1px solid $black;
@@ -23,11 +40,12 @@
 
     h2 {
         position: absolute;
-        width: 2rem;
+        width: 25%;
         font-size: 1rem;
         color: $bodyBackground;
         text-shadow: .5px 1px 1px rgb(0, 0, 0, 0.5);
-        padding: .2rem;
+        padding: .3rem;
+        word-wrap: break-word;
     }
 
     .card-left {

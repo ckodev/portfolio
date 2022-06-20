@@ -1,0 +1,28 @@
+
+.contact-me-container {
+
+    padding: 1rem;
+
+    .contact-me {
+        position: fixed;
+        top: 1.25rem;
+        right: 1rem;
+        font-size: 1rem;
+        z-index: 20;
+
+        @include desktopQuery {
+            right: initial;
+            margin-right: auto;
+            margin-left: 9rem;
+        }
+    }
+
+    img {
+        
+        display: block;
+        margin: auto;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid black;
+    }
+}

@@ -18,8 +18,37 @@ header {
     }
 
     #cko {
-        fill: $MainAccentColor;
+        text-shadow: 0px 0.6px 1px rgb(0 0 0 / 39%);
+        transition: .5s ease-in-out;
     }
+
+    .active.flower-box {
+        
+        #cko {
+            
+            fill: $FlowerBoxAccentColor;
+        }
+    }
+    .active.ghost-bomber {
+
+        #cko {
+            fill: $GhostBomberAccentColor;
+        }
+    }
+    .active.portfolio {
+
+        #cko {
+            fill: $PortfolioAccentColor;
+        }
+    }
+    .active.mustard {
+
+        #cko {
+            fill: $MustardAccentColor;
+        }
+    }
+
+    
 
     svg {
         width: 8rem;

@@ -36,6 +36,7 @@ const featuredImage = ( featuredImageObject ) => {
   return {__html: img}
 }
 
+  
 
   return (
     <BrowserRouter >
@@ -50,7 +51,7 @@ const featuredImage = ( featuredImageObject ) => {
                 <Route path='/PageContact' element={<PageContact featuredImage={featuredImage}  />}/>
             </Routes>
             
-            <Nav />
+            <Nav projectData={projectData}/>
         </div>
     </BrowserRouter>
   )

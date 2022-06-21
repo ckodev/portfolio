@@ -16,49 +16,91 @@
         margin: 0;
     }
 
-    // li.selected {
-    //     path {
-    //         fill: $MainAccentColor;
-    //     } 
-    //     .menu-active {
-    //         background-color: $MainAccentColor;
-    //         animation: createBox .5s ease;
-        
-    //         .menu-active {
-    //             display: none;
-    //         }
-    //     }
-    // }
-
     a {
         text-decoration: none;
         display: flex;
         flex-direction: column;
+        
 
         &:visited {
             color: $black;
         }
 
-        &.active path {
-            fill: $MainAccentColor;
+        &.active {
+            
+
+            path {
+                fill: $MainAccentColor; 
+            }
+
+            &.flower-box path {
+                fill: $FlowerBoxAccentColor;
+            }
+            &.ghost-bomber path {
+                fill: $GhostBomberAccentColor;
+            }
+            &.portfolio path {
+                fill: $PortfolioAccentColor;
+            }
+            &.mustard path {
+                fill: $MustardAccentColor;
+            }
         }
+        
         .menu-active {
             background-color: $bodyBackground;
-            width: 3rem; 
+            width: 4rem; 
             height: .2rem; 
             margin-bottom: .5rem;
             border-radius: 4px;
         }
-        &.active .menu-active {
-            background-color: $MainAccentColor;
-            animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
+
+        &.active  {
 
             .menu-active {
-                display: none;
-            }
-        }
+                background-color: $MainAccentColor;
+                animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
+                border: .1px solid $black ;
 
-         
+                .menu-active {
+                    display: none;
+                }
+            }
+
+            &.flower-box .menu-active {
+                background-color: $FlowerBoxAccentColor;
+                animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
+
+                .menu-active {
+                    display: none;
+                }
+            }
+            &.mustard .menu-active {
+                background-color: $MustardAccentColor;
+                animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
+
+                .menu-active {
+                    display: none;
+                }
+            }
+            &.ghost-bomber .menu-active {
+                background-color: $GhostBomberAccentColor;
+                animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
+
+                .menu-active {
+                    display: none;
+                }
+            }
+            &.portfolio .menu-active {
+                background-color: $PortfolioAccentColor;
+                animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
+
+                .menu-active {
+                    display: none;
+                }
+            }
+           
+        }
 
         @keyframes createBox {
             from {

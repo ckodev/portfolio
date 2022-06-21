@@ -60,13 +60,13 @@ function PageContact() {
                 <h1 className='header-heading' onClick={scrollToTop}>{restData.acf.h1}</h1>
                 <h2 className='page-heading'>{restData.acf.h2}</h2>
                 <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
-                <p className='display-linebreak'>{restData.acf.message_1} </p>
+                <p className='display-linebreak text-content'>{restData.acf.message_1} </p>
 
 
                 <div className="buttons-container">
-                  <button onClick={handleClick}><p>Copy email address</p><FaCopy/></button>
+                  <button onClick={handleClick}><p className='button-text'>Copy email address</p><FaCopy/></button>
                   <p className='email-address' onClick={handleClick}>{restData.acf.email}</p>
-                  <a href={`mailto:${restData.acf.email}?subject=The%20Matrix%20was%20a%20documentary&body=I%20look%20forward%20to%20hearing%20from%20you!`}><button><p>Open email client</p><FaEnvelope/></button></a>
+                  <a href={`mailto:${restData.acf.email}?subject=The%20Matrix%20was%20a%20documentary&body=I%20look%20forward%20to%20hearing%20from%20you!`}><button><p className='button-text'>Open email client</p><FaEnvelope/></button></a>
                 </div>
                
                

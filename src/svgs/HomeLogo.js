@@ -1,9 +1,9 @@
-const HomeLogo = () => {
+const HomeLogo = (activeClass) => {
     
     return (
        <>
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="297" height="107.512" viewBox="0 0 297 107.512">
+        <svg className={activeClass.className} xmlns="http://www.w3.org/2000/svg" width="297" height="107.512" viewBox="0 0 297 107.512">
           <g id="ckodev-blue" transform="translate(2393 6239.631)">
             <text id="_" data-name="‘" transform="translate(-2270 -6148.119) rotate(90)" fill="#1e1e1e" fontSize="64" fontFamily="Montserrat-SemiBold, Montserrat" fontWeight="600" letterSpacing="-0.01em"><tspan x="0" y="0">‘</tspan></text>
             <text id="_2" data-name="‘" transform="matrix(0, 1, 1, 0, -2222, -6148.119)" fill="#1e1e1e" fontSize="64" fontFamily="Montserrat-SemiBold, Montserrat" fontWeight="600" letterSpacing="-0.01em"><tspan x="0" y="0">‘</tspan></text>

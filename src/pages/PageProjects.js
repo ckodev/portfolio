@@ -6,9 +6,7 @@ import ProjectCard from '../components/ProjectCard'
 
 function PageProjects({handleProjectData}) {
 
-
     const [isLoaded, setLoaded] = useState(false)
-    
     const restPath = 'https://ckodev.com/ckodev/wp-json/wp/v2/ckodev-project?_embed'
     const [restData, setData] = useState([])
 
@@ -38,7 +36,6 @@ function PageProjects({handleProjectData}) {
   
     return (
       <>
-  
   
         { isLoaded ?
           <div className='entry-content projects'>

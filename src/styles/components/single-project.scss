@@ -30,27 +30,42 @@
         display: flex;
         justify-content: center;
         gap: .5rem;
+        padding-top: 1rem;
 
         .tool-tile {
             display: flex;
             flex-direction: column;
-            width: 20%;
+            width: 4rem;
             
 
             img {
-                width: 3.5rem;
+                width: 3rem;
                 margin: auto;
                 height: -webkit-fill-available;
-                border: 1px solid $black;
-                border-radius: 5px;
+                // border: 1px solid $black;
+                box-shadow: -.2px 1px 3px rgb(0, 0, 0, 0.5);
+                border-radius: 7px;
                 padding: .5rem;
                 background-color: $MainAccentColor;
+
+                &.ghost-bomber {
+                    background-color: $GhostBomberAccentColor;
+                }
+                &.portfolio {
+                    background-color: $PortfolioAccentColor;
+                }
+                &.flower-box {
+                    background-color: $FlowerBoxAccentColor;
+                }
+                &.mustard {
+                    background-color: $MustardAccentColor;
+                }
 
             }
     
             h3 {
                 font-size: .65rem;
-                padding: 0;
+                padding: .5rem 0;
                 text-align: center;
                 font-weight: 400;
             }

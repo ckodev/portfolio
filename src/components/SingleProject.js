@@ -18,7 +18,7 @@ function SingleProject({projectData}) {
     const [isLoaded2, setLoaded2] = useState(false)
 
 
-  
+   
    
 
     useEffect(() => {
@@ -58,6 +58,9 @@ function SingleProject({projectData}) {
         fetchData()
     }, [restPath2])
 
+    function scrollToTop() {
+        window.scrollTo({top:0, behavior:'smooth'} );
+      }
  
 
   return (
@@ -70,7 +73,7 @@ function SingleProject({projectData}) {
         
         <section className='single-project-container'>
             {/* Project title */}
-            <h2 className='project-title'>{restData.title.rendered}</h2>
+            <h2 className='project-title' onClick={scrollToTop}>{restData.title.rendered} </h2>
             {/* featured image */}
             <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
             {/* project overview */}

@@ -5,8 +5,7 @@
 body {
     font-family: $Montserrat;
     background-color: $bodyBackground; 
-    max-width: 1200px;
-    margin: auto;
+   
 }
 
 .wrapper {
@@ -16,8 +15,11 @@ body {
 }
 
 .entry-content {
+    margin: auto;
     margin-top: 1rem;
     margin-bottom: 4rem;
+    max-width: 1200px;
+   
 }
 
 h1, h2, h3, h4 {

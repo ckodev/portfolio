@@ -24,7 +24,9 @@ function PageAbout() {
         fetchData()
     }, [])
   
-   
+    function scrollToTop() {
+      window.scrollTo({top:0, behavior:'smooth'} );
+    }
   
     return (
       <>
@@ -34,7 +36,7 @@ function PageAbout() {
           <div className='entry-content'>
             
             <section className='about-me-container' id='about-me'>
-                <h1 className='about-me'>{restData.acf.h1}</h1>
+                <h1 className='about-me' onClick={scrollToTop}>{restData.acf.h1}</h1>
                 <h2 className=''>{restData.acf.h2}</h2>
                 <p className='display-linebreak'>{restData.acf.about_me}</p>
             </section>

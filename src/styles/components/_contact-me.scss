@@ -32,8 +32,10 @@
         margin: auto;
         width: 50%;
         border-radius: 7px;
-        border: 1px solid black;
+        // border: 1px solid black;
+        box-shadow: -.2px 1px 3px rgb(0, 0, 0, 0.5);
         margin-right: .75rem;
+        margin-top: 0.25rem;
     }
 
     .email-address {
@@ -45,22 +47,38 @@
         color: $black;
     }
 
-    button {
-        display: block;
-        margin: auto;
-        padding: 1rem;
-        background-color: $MainAccentColor;
-        border: none;
-        border-radius: 7px;
-        color: $bodyBackground;
-        font-weight: 500;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+    .buttons-container {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
 
-        svg {
-            width: 1.2rem;
-            height: 1.2rem;
-            margin-left: .5rem;
+        button {
+            justify-content: space-between;
+            display: flex;
+            position: relative;
+            margin: auto;
+            padding: .8rem;
+            background-color: $MainAccentColor;
+            border: none;
+            border-radius: 7px;
+            color: $bodyBackground;
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: -.2px 1px 3px rgb(0, 0, 0, 0.5);
+            font-size: .8rem;
+            width: 12rem;
+    
+            p {
+                display: inline;
+            }
+    
+            svg {
+                
+                font-size: 1rem;
+                margin-left: .5rem;
+            }
         }
     }
+    
 }

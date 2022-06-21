@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
+import { FaCopy, FaEnvelope } from 'react-icons/fa';
 
 function PageContact() {
 
@@ -54,15 +55,16 @@ function PageContact() {
         { isLoaded ?
            <div className="entry-content">
              <section className='contact-me-container' id='contact-me'>
-                <h1 className='contact-me'>{restData.acf.h1}</h1>
-                <h2 className=''>{restData.acf.h2}</h2>
-                <p className='display-linebreak'>{restData.acf.message_1}</p>
+                <h1 className='header-heading'>{restData.acf.h1}</h1>
+                <h2 className='page-heading'>{restData.acf.h2}</h2>
                 <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
-                <button onClick={handleClick}>Copy email address</button>
-                <p onClick={handleClick}>{restData.acf.email}</p>
-                <a href={`mailto:${restData.acf.email}?subject=The%20Matrix%20Doc?&body=I%20look%20forward%20to%20hearing%20from%20you!`}><button>Open email client</button></a>
+                <p className='display-linebreak'>{restData.acf.message_1} </p>
+             
+                <button onClick={handleClick}>Copy email address<FaCopy/></button>
+                <p className='email-address' onClick={handleClick}>{restData.acf.email}</p>
+                <a href={`mailto:${restData.acf.email}?subject=The%20Matrix%20Doc?&body=I%20look%20forward%20to%20hearing%20from%20you!`}><button>Open email client<FaEnvelope/></button></a>
                
-                <p className='display-linebreak'>{restData.acf.message_2}</p>
+                {/* <p className='display-linebreak'>{restData.acf.message_2}</p> */}
               </section>
            </div>
         : 

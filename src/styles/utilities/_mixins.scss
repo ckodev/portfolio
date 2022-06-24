@@ -9,6 +9,6 @@
 @mixin desktopQuery {
     @media (min-width: 900px) { @content; }
 }
-@mixin desktopLargeQuery {
-    @media (min-width: 1024px) { @content; }
-}
+
+
+

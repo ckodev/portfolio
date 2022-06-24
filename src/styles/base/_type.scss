@@ -10,15 +10,16 @@ body {
 
 .wrapper {
     position: relative;
-    max-width: 100rem;
+    max-width: 100%;
     margin: auto;
 }
 
 .entry-content {
     margin: auto;
-    margin-top: 1rem;
-    margin-bottom: 4rem;
-    max-width: 1200px;
+    max-width: 75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
    
 }
 

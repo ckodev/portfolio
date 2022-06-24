@@ -3,6 +3,9 @@
 
 .project-cards {
     vertical-align: middle;
+    margin: auto;
+    max-width: 75rem;
+    width: 100%;
 
     .featured-project {
         position: fixed;
@@ -10,6 +13,7 @@
         right: 1rem;
         font-size: 1rem;
         z-index: 20;
+        cursor: pointer;
 
         @include desktopQuery {
             right: initial;

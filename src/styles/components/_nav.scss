@@ -8,18 +8,33 @@
     background-color: $bodyBackground;
     box-shadow: .2px -1px 3px rgb(0, 0, 0, 0.25);
 
+    @include desktopQuery {
+        bottom: initial;
+        top: 0;
+        z-index: 15;
+        background: none;
+        box-shadow: none;
+    }
+
     ul {
         list-style: none;
         display: flex; 
         justify-content: space-around;
         padding: 0 0 .5rem 0;
         margin: 0;
+
+        @include desktopQuery {
+            justify-content: flex-end;
+            max-width: 75rem;
+            margin: auto;
+        }
     }
 
     a {
         text-decoration: none;
         display: flex;
         flex-direction: column;
+        
         
 
         &:visited {
@@ -28,6 +43,7 @@
 
         &.active {
             
+            
 
             path {
                 fill: $MainAccentColor; 
@@ -35,6 +51,7 @@
 
             &.flower-box path {
                 fill: $FlowerBoxAccentColor;
+                
             }
             &.ghost-bomber path {
                 fill: $GhostBomberAccentColor;
@@ -50,9 +67,13 @@
         .menu-active {
             background-color: $bodyBackground;
             width: 4rem; 
-            height: .2rem; 
+            height: .3rem; 
             margin-bottom: .5rem;
             border-radius: 4px;
+
+            @include desktopQuery {
+                display: none;
+            }
         }
 
         &.active  {
@@ -60,9 +81,15 @@
             .menu-active {
                 background-color: $MainAccentColor;
                 animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
-                border: .1px solid $black ;
+                // border: .1px solid $black ;
 
                 .menu-active {
+                    display: none;
+
+
+                }
+
+                @include desktopQuery {
                     display: none;
                 }
             }
@@ -70,6 +97,7 @@
             &.flower-box .menu-active {
                 background-color: $FlowerBoxAccentColor;
                 animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
+                transition: .25s ease-in-out;
 
                 .menu-active {
                     display: none;
@@ -78,6 +106,7 @@
             &.mustard .menu-active {
                 background-color: $MustardAccentColor;
                 animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
+                transition: .25s ease-in-out;
 
                 .menu-active {
                     display: none;
@@ -86,6 +115,7 @@
             &.ghost-bomber .menu-active {
                 background-color: $GhostBomberAccentColor;
                 animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
+                transition: .25s ease-in-out;
 
                 .menu-active {
                     display: none;
@@ -94,6 +124,7 @@
             &.portfolio .menu-active {
                 background-color: $PortfolioAccentColor;
                 animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
+                transition: .25s ease-in-out;
 
                 .menu-active {
                     display: none;
@@ -115,6 +146,16 @@
             width: 2rem;
             height: 1.1rem;
             align-self: center;
+            
+
+            path {
+                stroke-width: 0.7;
+                transition: fill .25s ease-in-out;
+            }
+
+            @include desktopQuery {
+                display: none;
+            }
         }
     
         p {
@@ -122,6 +163,11 @@
             color: $black;
             align-self: center;
             padding-top: .2rem;
+
+            @include desktopQuery {
+                font-size: 1rem;
+                padding: 1rem;
+            }
         }
     } 
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
-import { FaCopy, FaEnvelope } from 'react-icons/fa';
+import { FaCopy, FaEnvelope, FaHandHoldingHeart, FaHandLizard, FaHandMiddleFinger, FaHandsHelping } from 'react-icons/fa';
 
 function PageContact() {
 
@@ -58,9 +58,14 @@ function PageContact() {
            <div className="entry-content">
              <section className='contact-me-container' id='contact-me'>
                 <h1 className='header-heading' onClick={scrollToTop}>{restData.acf.h1}</h1>
-                <h2 className='page-heading'>{restData.acf.h2}</h2>
-                <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
-                <p className='display-linebreak text-content'>{restData.acf.message_1} </p>
+                <div className="h2-container">
+                  <h2 className='page-heading'>{restData.acf.h2}</h2>
+                  <FaHandsHelping/>
+                </div>
+                <div className="contact-message-container">
+                  <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
+                  <p className='display-linebreak text-content'>{restData.acf.message_1} </p>
+                </div>
 
 
                 <div className="buttons-container">

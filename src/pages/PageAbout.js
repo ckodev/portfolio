@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
+import {FaHandPeace} from 'react-icons/fa';
 
 function PageAbout() {
 
@@ -37,7 +38,10 @@ function PageAbout() {
             
             <section className='about-me-container' id='about-me'>
                 <h1 className='about-me' onClick={scrollToTop}>{restData.acf.h1}</h1>
-                <h2 className=''>{restData.acf.h2}</h2>
+                <div className="h2-container">
+                  <h2 className=''>{restData.acf.h2}</h2>
+                  <FaHandPeace/>
+                </div>
                 <p className='display-linebreak text-content'>{restData.acf.about_me}</p>
             </section>
   

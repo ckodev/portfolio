@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom'
 
 function ProjectCard({project}) {
 
-    const imgPath = project.acf.project_card_thumbnail.url
+    const imgPath = project.acf.project_card_thumbnail.sizes.thumbnail
     const imgAltText = project.acf.project_card_thumbnail.alt
 
   return (

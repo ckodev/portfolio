@@ -1,0 +1,47 @@
+
+@use '../base/variables' as *;
+
+
+.Tabs {
+	position: relative;
+	background: none;
+	&:after {
+		content: ' ';
+		display: table;
+		clear: both;
+	}
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	/**
+	 * UPDATE: better to animate "transform" property than "left"
+	 * property. You can see old code lower down for reference.
+	 */
+	&__tab {
+		float: left;
+		width: 33.333%;
+		text-align: center;
+        background: none;
+        border: none;
+
+		&:first-child.Mui-selected ~ .Tabs__presentation-slider {
+			transform: translateX(0) scaleX(0.333);
+		}
+		&:nth-child(2).Mui-selected ~ .Tabs__presentation-slider {
+			transform: translateX(33.333%) scaleX(0.333);
+		}
+		&:nth-child(3).Mui-selected ~ .Tabs__presentation-slider {
+			transform: translateX(calc(33.333% * 2)) scaleX(0.333);
+		}
+	}
+	&__presentation-slider {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #4A66F4;
+		transform-origin: 0 0;
+		transition: transform .25s;
+	}
+}

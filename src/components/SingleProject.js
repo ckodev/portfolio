@@ -1,10 +1,12 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
 import {useState, useEffect} from 'react'
-import Loading from './Loading';
-import ProjectHighlights from './ProjectHighlights';
-import Tools from './Tools';
-import SliderGallery from './SliderGallery';
+import Loading from './Loading'
+import ProjectHighlights from './ProjectHighlights'
+import Tools from './Tools'
+import SliderGallery from './SliderGallery'
+import { useLocation } from "react-router-dom"
+import {NavLink} from 'react-router-dom'
 
 
 
@@ -18,9 +20,6 @@ function SingleProject() {
     const [isLoaded2, setLoaded2] = useState(false)
 
 
-   
-   
-
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(restPath)
@@ -28,16 +27,15 @@ function SingleProject() {
                 const data = await response.json()
                 setData(data)
                 setLoadStatus(true)
-                console.log(window.location.pathname)
            
             } else {
                 setLoadStatus(false)
             }
         }
+
         fetchData()
     }, [restPath])
 
-    
     
     const restPath2 = 'https://ckodev.com/ckodev/wp-json/wp/v2/ckodev-project?_embed'
     const [restData2, setData2] = useState([])
@@ -61,6 +59,29 @@ function SingleProject() {
     function scrollToTop() {
         window.scrollTo({top:0, behavior:'smooth'} );
       }
+
+
+      const location = useLocation();
+    const { pathname } = location;
+    const splitLocation = pathname.split("/");
+    const [activeClass, setActiveClass] = useState('')
+ 
+    useEffect(() => {
+        const changeAccentColor = () => {
+            if (splitLocation[2] === '15') {
+                setActiveClass('flower-box')
+            } else if (splitLocation[2] === '14') {
+                setActiveClass('portfolio')
+            } else if (splitLocation[2] === '13') {
+                setActiveClass('ghost-bomber')
+            } else if (splitLocation[2] === '12') {
+                setActiveClass('mustard')
+            } else {
+                setActiveClass('')
+            }
+        }
+        changeAccentColor()
+    }, [splitLocation]) 
  
 
   return (
@@ -71,40 +92,61 @@ function SingleProject() {
 
     <div className='entry-content'>
         
-        <section className='single-project-container'>
+        <article className='single-project-container'>
             {/* Project title */}
-            <h2 className='project-title' onClick={scrollToTop}>{restData.title.rendered} </h2>
+            <h1 className='project-title' onClick={scrollToTop}>{restData.title.rendered} </h1>
 
             {/* featured image */}
-            <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
+            <section className="image-overview-tool-container">
+                <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
+                <div className="tool-overview-container">
 
-            {/* project overview */}
-            <p className='display-linebreak text-content'>{restData.acf.project_overview}</p>
+                    {/* tools used */}
+                    <div className='tool-tile-container'>
+                        <h2 className='sr-only'>Development Tools</h2>
+                        {restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}
+                    </div>
+                    
+                    <div className="overview-links-container">
+                        {/* project overview */}
+                        <p className='display-linebreak text-content'>{restData.acf.project_overview}</p>
+                        {/* Links to Live site & git hub */}
+                        <div className="link-container">
+                            <a className={activeClass} href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
+                            <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
+                        </div>
+                        <NavLink className="back" to="/PageProjects">&#8810; Back</NavLink>
+                    </div>
+                    
+                </div>
+
+            </section>
 
            
-            {/* tools used */}
-            <div className='tool-tile-container'>{restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}</div>
 
-            {/* Links to Live site & git hub */}
-            <a href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
-            <a href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
 
-            {/* Reflection Section */}
-            <h3>{restData.acf.reflection_heading}</h3>
-            <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
-
-            {/* Project Highlights */}
-            <h2>{restData.acf.project_highlights_heading}</h2>
-            <div>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
-
-            {/* development section */}
-            <h3>{restData.acf.development_heading}</h3>
-            <p className='display-linebreak text-content'>{restData.acf.development}</p>
+            <div className="project-info-container">
+                {/* take aways Section */}
+                <section className="take-aways">
+                    <h3>{restData.acf.reflection_heading}</h3>
+                    <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
+                </section>
+                {/* Project Highlights */}
+                <section className="highlights-container">
+                    <h2>{restData.acf.project_highlights_heading}</h2>
+                    <div>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
+                </section>
+                {/* develoarticle */}
+                <section className="development-container">
+                    <h3>{restData.acf.development_heading}</h3>
+                    <p className='display-linebreak text-content'>{restData.acf.development}</p>
+                </section>
+            </div>
 
             {/* slider section - links to my other projects */}
             <SliderGallery projectData={restData2} />
 
-        </section>
+        </article>
         
         
     </div>

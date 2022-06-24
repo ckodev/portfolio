@@ -38,9 +38,6 @@ function Nav() {
         }
         changeAccentColor()
     }, [splitLocation])
-   
-
-    console.log(activeClass)
 
     
   return (

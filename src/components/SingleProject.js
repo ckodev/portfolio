@@ -7,6 +7,10 @@ import Tools from './Tools'
 import SliderGallery from './SliderGallery'
 import { useLocation } from "react-router-dom"
 import {NavLink} from 'react-router-dom'
+import TabsUnstyled from '@mui/base/TabsUnstyled';
+import TabsListUnstyled from '@mui/base/TabsListUnstyled';
+import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
+import TabUnstyled from '@mui/base/TabUnstyled';
 
 
 
@@ -61,7 +65,7 @@ function SingleProject() {
       }
 
 
-      const location = useLocation();
+    const location = useLocation();
     const { pathname } = location;
     const splitLocation = pathname.split("/");
     const [activeClass, setActiveClass] = useState('')
@@ -82,7 +86,7 @@ function SingleProject() {
         }
         changeAccentColor()
     }, [splitLocation]) 
- 
+
 
   return (
 
@@ -126,22 +130,56 @@ function SingleProject() {
 
 
             <div className="project-info-container">
-                {/* take aways Section */}
-                <section className="take-aways">
-                    <h3>{restData.acf.reflection_heading}</h3>
-                    <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
-                </section>
-                {/* Project Highlights */}
-                <section className="highlights-container">
-                    <h2>{restData.acf.project_highlights_heading}</h2>
-                    <div>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
-                </section>
-                {/* develoarticle */}
-                <section className="development-container">
-                    <h3>{restData.acf.development_heading}</h3>
-                    <p className='display-linebreak text-content'>{restData.acf.development}</p>
-                </section>
+                
+
+
+                <TabsUnstyled defaultValue={0}>
+                    <TabsListUnstyled className="Tabs">
+
+                        <TabUnstyled className='Tabs__tab Tab'>
+                            {restData.acf.reflection_heading}
+                        </TabUnstyled>
+
+                        <TabUnstyled className='Tabs__tab Tab'>
+                            {restData.acf.project_highlights_heading}
+                        </TabUnstyled>
+
+                        <TabUnstyled className='Tabs__tab Tab'>
+                            {restData.acf.development_heading}
+                        </TabUnstyled>
+                        
+                        <div className='Tabs__presentation-slider' role='presentation'></div>
+                    </TabsListUnstyled>
+
+                   
+                   
+                        <TabPanelUnstyled value={0}>
+                            {/* take aways Section */}
+                            <section className="take-aways">
+                                    <h2>{restData.acf.reflection_heading}</h2>
+                                    <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
+                            </section>
+                        </TabPanelUnstyled>
+                        <TabPanelUnstyled value={1}>
+                            {/* Project Highlights */}
+                            <section className="highlights-container">
+                                <h2>{restData.acf.project_highlights_heading}</h2>
+                                <div>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
+                            </section>
+                        </TabPanelUnstyled>
+                        <TabPanelUnstyled value={2}>
+                            {/* develoarticle */}
+                            <section className="development-container">
+                                <h2>{restData.acf.development_heading}</h2>
+                                <p className='display-linebreak text-content'>{restData.acf.development}</p>
+                            </section>
+                        </TabPanelUnstyled>
+                </TabsUnstyled>
             </div>
+
+
+
+            
 
             {/* slider section - links to my other projects */}
             <SliderGallery projectData={restData2} />

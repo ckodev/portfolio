@@ -17,11 +17,16 @@ header {
         margin: auto;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     svg {
         fill: $black;
         width: 8rem;
         height: auto;
         padding: 0.5rem 1rem;
+
     }
 
     #cko {

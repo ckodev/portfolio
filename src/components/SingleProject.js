@@ -114,12 +114,13 @@ function SingleProject() {
                     <div className="overview-links-container">
                         {/* project overview */}
                         <p className='display-linebreak text-content'>{restData.acf.project_overview}</p>
+                        <NavLink className="back" to="/PageProjects">&#8810; Back</NavLink>
                         {/* Links to Live site & git hub */}
                         <div className="link-container">
                             <a className={activeClass} href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
                             <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
                         </div>
-                        <NavLink className="back" to="/PageProjects">&#8810; Back</NavLink>
+                        
                     </div>
                     
                 </div>
@@ -134,21 +135,20 @@ function SingleProject() {
 
 
                 <TabsUnstyled defaultValue={0}>
-                    <TabsListUnstyled className="Tabs">
-
-                        <TabUnstyled className='Tabs__tab Tab'>
+                    <TabsListUnstyled className='Tabs'>
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
                             {restData.acf.reflection_heading}
                         </TabUnstyled>
 
-                        <TabUnstyled className='Tabs__tab Tab'>
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
                             {restData.acf.project_highlights_heading}
                         </TabUnstyled>
 
-                        <TabUnstyled className='Tabs__tab Tab'>
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
                             {restData.acf.development_heading}
                         </TabUnstyled>
                         
-                        <div className='Tabs__presentation-slider' role='presentation'></div>
+                        <span className={`Tabs__presentation-slider ${activeClass}`} role='presentation'></span>
                     </TabsListUnstyled>
 
                    

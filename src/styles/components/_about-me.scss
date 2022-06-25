@@ -1,3 +1,4 @@
+@use '../base/variables' as *;
 
 .about-me-container {
     padding: 1rem;
@@ -28,10 +29,11 @@
             width: 2rem;
             height: 1.3rem;
             margin-left: .25rem;
-            margin-bottom: 0.1rem;
+            // margin-bottom: 0.1rem;
 
             path {
-                fill: #fff400;
+                // fill: #fff400;
+                fill: $MainAccentColor;
                 stroke: black;
                 stroke-width: 9;
             }

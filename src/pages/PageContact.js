@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
-import { FaCopy, FaEnvelope, FaHandHoldingHeart, FaHandLizard, FaHandMiddleFinger, FaHandsHelping } from 'react-icons/fa';
+import { FaEnvelope, FaCopy, FaWaveSquare } from 'react-icons/fa';
 
 function PageContact() {
 
@@ -60,7 +60,7 @@ function PageContact() {
                 <h1 className='header-heading' onClick={scrollToTop}>{restData.acf.h1}</h1>
                 <div className="h2-container">
                   <h2 className='page-heading'>{restData.acf.h2}</h2>
-                  <FaHandsHelping/>
+                  <FaWaveSquare/>
                 </div>
                 <div className="contact-message-container">
                   <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />

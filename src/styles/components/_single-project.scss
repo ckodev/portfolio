@@ -142,6 +142,7 @@
         padding: 1rem 0;
         order: 2;
         height: fit-content;
+        margin: 2rem 0;
 
         a {
             padding: .75rem 1rem;
@@ -156,18 +157,20 @@
 
 
             &.ghost-bomber {
-                background-color: $GhostBomberAccentColor;
+                background-color: $black;
+                color: $GhostBomberAccentColor;
             }
             &.flower-box {
-                background-color: $FlowerBoxAccentColor;
-                color: $bodyBackground;
+                background-color: $black;
+                color: $FlowerBoxAccentColor;
             }
             &.portfolio {
-                background-color: $PortfolioAccentColor;
-                color: $bodyBackground;
+                background-color: $black;
+                color: $PortfolioAccentColor;
             }
             &.mustard {
-                background-color: $MustardAccentColor2;
+                background-color: $black;
+                color: $MustardAccentColor2;
                 
             }
         }
@@ -177,7 +180,9 @@
         display: block;
         text-align: center;
         text-decoration: none;
-        color: black;
+        color: $black;
+        width: 8rem;
+        margin: auto;
     }
 
   

@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 function SliderGallery({projectData}) {
 
  
-
+console.log(projectData)
 
   function scrollToTop() {
     window.scrollTo({top:0, behavior:'smooth'} );

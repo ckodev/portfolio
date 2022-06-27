@@ -4,8 +4,12 @@
 .project-cards {
     vertical-align: middle;
     margin: auto;
-    max-width: 75rem;
+    max-width: $MaxWidth;
     width: 100%;
+
+    @include desktopQuery {
+        margin-top: 5%;
+    }
 
     .featured-project {
         position: fixed;
@@ -31,11 +35,11 @@
         color: black;
         display: flex;
         height: 6.25rem;
-        // border: 1px solid $black;
         border-radius: 7px;
         overflow: hidden;
         box-shadow: -.2px 1px 3px rgb(0, 0, 0, 0.5);
         text-decoration: none;
+        color: $black;
 
         &:visited {
             color: $black;
@@ -65,7 +69,7 @@
             bottom: -3px;
             right: -5px;
             transform: rotate(20deg);
-            box-shadow: 5px 5px 10px black, inset 0em 0em 0px 5px rgb(0, 0, 0);
+            box-shadow: 5px 5px 10px black;
             border-radius: 3px 
             
         }
@@ -79,6 +83,7 @@
         // justify-content: center;
         width: 100%;
         background-color: $bodyBackground; 
+        align-self: center;
 
         p {
             align-self: center;
@@ -88,18 +93,28 @@
         }
     
         button {
+  
             align-self: center;
             justify-self: flex-end;
             background: none;
             border: none;
             font-size: .75rem;
             width: fit-content;
-            bottom: 0;
-            left: 0;
+ 
             margin-left: auto;
-            padding: 0 1rem;
+     
             margin-top: .5rem;
             cursor: pointer;
+            color: $bodyBackground;
+            border-radius: 4px;
+            background-color: $MainAccentColor;
+            padding: 0.4rem;
+            margin-right: 0.4rem;
+            box-shadow: $ButtonAndIconShadow;
+
+            @include desktopQuery {
+                margin-right: 1rem;
+            }
         }
     }
 

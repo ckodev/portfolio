@@ -7,10 +7,14 @@ import Tools from './Tools'
 import SliderGallery from './SliderGallery'
 import { useLocation } from "react-router-dom"
 import {NavLink} from 'react-router-dom'
+import TabsUnstyled from '@mui/base/TabsUnstyled';
+import TabsListUnstyled from '@mui/base/TabsListUnstyled';
+import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
+import TabUnstyled from '@mui/base/TabUnstyled';
 
 
 
-function SingleProject() {
+function SingleProject({featuredImage}) {
 
     const { id } = useParams();
     const restPath = `https://ckodev.com/ckodev/wp-json/wp/v2/ckodev-project/${id}?_embed`
@@ -61,7 +65,7 @@ function SingleProject() {
       }
 
 
-      const location = useLocation();
+    const location = useLocation();
     const { pathname } = location;
     const splitLocation = pathname.split("/");
     const [activeClass, setActiveClass] = useState('')
@@ -82,7 +86,7 @@ function SingleProject() {
         }
         changeAccentColor()
     }, [splitLocation]) 
- 
+
 
   return (
 
@@ -94,30 +98,32 @@ function SingleProject() {
         
         <article className='single-project-container'>
             {/* Project title */}
-            <h1 className='project-title' onClick={scrollToTop}>{restData.title.rendered} </h1>
+            <h2 className='project-title' onClick={scrollToTop}>{restData.title.rendered} </h2>
 
             {/* featured image */}
             <section className="image-overview-tool-container">
-                <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
-                <div className="tool-overview-container">
 
-                    {/* tools used */}
-                    <div className='tool-tile-container'>
-                        <h2 className='sr-only'>Development Tools</h2>
-                        {restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}
-                    </div>
-                    
-                    <div className="overview-links-container">
+                <div className="img-overview-container">
+                     <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
+
+                    <div className="overview">
                         {/* project overview */}
+                        <h1>{restData.title.rendered}</h1>
                         <p className='display-linebreak text-content'>{restData.acf.project_overview}</p>
-                        {/* Links to Live site & git hub */}
-                        <div className="link-container">
-                            <a className={activeClass} href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
-                            <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
-                        </div>
                         <NavLink className="back" to="/PageProjects">&#8810; Back</NavLink>
                     </div>
-                    
+                </div>
+
+                {/* tools used */}
+                <div className='tool-tile-container'>
+                    <h2 className='sr-only'>Development Tools</h2>
+                    {restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}
+                </div>
+
+                {/* Links to Live site & git hub */}
+                <div className="link-container">
+                    <a className={activeClass} href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
+                    <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
                 </div>
 
             </section>
@@ -126,22 +132,55 @@ function SingleProject() {
 
 
             <div className="project-info-container">
-                {/* take aways Section */}
-                <section className="take-aways">
-                    <h3>{restData.acf.reflection_heading}</h3>
-                    <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
-                </section>
-                {/* Project Highlights */}
-                <section className="highlights-container">
-                    <h2>{restData.acf.project_highlights_heading}</h2>
-                    <div>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
-                </section>
-                {/* develoarticle */}
-                <section className="development-container">
-                    <h3>{restData.acf.development_heading}</h3>
-                    <p className='display-linebreak text-content'>{restData.acf.development}</p>
-                </section>
+                
+
+
+                <TabsUnstyled defaultValue={0} className='content-under-tabs'>
+                    <TabsListUnstyled className={`Tabs ${activeClass}`}>
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
+                            {restData.acf.reflection_heading}
+                        </TabUnstyled>
+
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
+                            {restData.acf.project_highlights_heading}
+                        </TabUnstyled>
+
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
+                            {restData.acf.development_heading}
+                        </TabUnstyled>
+                        
+                        <span className={`Tabs__presentation-slider ${activeClass}`} role='presentation'></span>
+                    </TabsListUnstyled>
+
+                   
+                   
+                        <TabPanelUnstyled value={0}>
+                            {/* take aways Section */}
+                            <section className="take-aways">
+                                    <h2>{restData.acf.reflection_heading}</h2>
+                                    <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
+                            </section>
+                        </TabPanelUnstyled>
+                        <TabPanelUnstyled value={1}>
+                            {/* Project Highlights */}
+                            <section className="highlights-container">
+                                <h2>{restData.acf.project_highlights_heading}</h2>
+                                <div>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
+                            </section>
+                        </TabPanelUnstyled>
+                        <TabPanelUnstyled value={2}>
+                            {/* develoarticle */}
+                            <section className="development-container">
+                                <h2>{restData.acf.development_heading}</h2>
+                                <p className='display-linebreak text-content'>{restData.acf.development}</p>
+                            </section>
+                        </TabPanelUnstyled>
+                </TabsUnstyled>
             </div>
+
+
+
+            
 
             {/* slider section - links to my other projects */}
             <SliderGallery projectData={restData2} />

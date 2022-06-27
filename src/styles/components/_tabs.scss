@@ -1,0 +1,122 @@
+
+@use '../base/variables' as *;
+
+
+
+    .Tabs {
+        position: sticky;
+        top: 59px;
+        background: $GhostBomberAccentColor;
+        box-shadow: 0px 0px 3px -1px rgb(0, 0, 0, 0.25);
+    
+        &.flower-box {
+            background: $FlowerBoxAccentColor;
+        }
+        &.Ghost-bomber {
+            background: $GhostBomberAccentColor;
+        }
+        &.portfolio {
+            background: $PortfolioAccentColor;
+        }
+        &.mustard {
+            background: $MustardAccentColor2;
+        }
+    
+            &:after {
+                content: ' ';
+                display: table;
+                clear: both;
+            }
+        
+        padding: 0;
+        list-style: none;
+        max-width: 36rem;
+        margin: 1rem auto;
+        padding-bottom: 0.5rem;
+    
+    
+            button {
+                color: $black;
+            }
+    
+            &__tab {
+                float: left;
+                width: 33.333%;
+                text-align: center;
+                background: none;
+                border: none;
+                font-size: .75rem;
+                cursor: pointer;
+                margin-top: .5rem;
+               
+                
+    
+                &.TabUnstyled-root.Mui-selected.Tabs__tab.portfolio.Tab {
+                    color: $PortfolioAccentColor;
+                    
+                }
+                &.TabUnstyled-root.Mui-selected.Tabs__tab.mustard.Tab {
+                    color: $MustardAccentColor2;
+                    
+                }
+                &.TabUnstyled-root.Mui-selected.Tabs__tab.ghost-bomber.Tab {
+                    color: $GhostBomberAccentColor;
+                    
+                }
+                &.TabUnstyled-root.Mui-selected.Tabs__tab.flower-box.Tab {
+                    color: $FlowerBoxAccentColor;
+                    
+                }
+    
+    
+    
+                &:first-child.Mui-selected ~ .Tabs__presentation-slider {
+                    transform: translateX(0) scaleX(0.333);
+                }
+                &:nth-child(2).Mui-selected ~ .Tabs__presentation-slider {
+                    transform: translateX(33.333%) scaleX(0.333);
+                }
+                &:nth-child(3).Mui-selected ~ .Tabs__presentation-slider {
+                    transform: translateX(calc(33.333% * 2)) scaleX(0.333);
+                }
+        }
+        &__presentation-slider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.95rem;
+                @supports (-webkit-touch-callout: none) {
+                /* CSS specific to iOS devices */ 
+                    height: 1.8rem;
+                }
+            transform-origin: 0 0;
+            transition: transform .4s;
+            z-index: -1;
+            box-shadow: -0.2px 1px 3px rgb(0 0 0 / 20%);
+            // border-radius: 7px;
+    
+            &.flower-box {
+                background-color: $black;
+                color: $FlowerBoxAccentColor;
+            }
+            &.portfolio {
+                background-color: $black;
+                color: $PortfolioAccentColor;
+            }
+            &.ghost-bomber {
+                background-color: $black;
+                color: $GhostBomberAccentColor;
+    
+            }
+            &.mustard {
+                background-color: $black;
+                color: $MustardAccentColor;
+            }
+        }
+    
+    
+    }
+
+
+

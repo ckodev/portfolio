@@ -10,5 +10,10 @@
     @media (min-width: 900px) { @content; }
 }
 
+@mixin customQueryContactPage {
+    @media (min-width: 760px) { @content; }
+}
+
+
 
 

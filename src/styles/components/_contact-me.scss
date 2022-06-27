@@ -1,8 +1,12 @@
 @use '../base/variables' as *;
 
 .contact-me-container {
-    max-width: 75rem;
-    padding: 1rem;
+    max-width: $MaxWidth;
+    padding: 2rem 1rem 1rem 1rem;
+
+    @include desktopQuery {
+        margin-top: 5%;
+    }
 
     
 
@@ -32,11 +36,14 @@
         display: block;
         margin: auto;
         width: 50%;
-        // border-radius: 7px;
-        // border: 1px solid black;
+        max-width: 26rem;
         box-shadow: -.2px 1px 3px rgb(0, 0, 0, 0.5);
         margin-right: 1rem;
-        margin-top: 0.7rem;
+
+        @include customQueryContactPage {
+            float: initial;
+           
+        }
     }
 
     .email-address {
@@ -47,6 +54,7 @@
     a {
         text-decoration: none;
         color: $black;
+        cursor: default;
     }
 
     .text-content {
@@ -54,11 +62,16 @@
         font-size: .96rem;
     }
 
-    .h2-container {
+    .h2-container-1 {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: center;
+        padding-bottom: 1rem;
+
+        @include customQueryContactPage {
+            display: none;
+        }
 
         svg {
             width: 2rem;
@@ -75,6 +88,58 @@
 
     .contact-message-container {
         padding-top: .1rem;
+
+        .content-right-container {
+
+            @include customQueryContactPage {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 1rem;
+            }
+
+            @include desktopQuery {
+                padding: 1rem 2rem;
+            }
+    
+
+            .h2-container-2 {
+                display: none;
+
+               @include customQueryContactPage {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    padding-bottom: 1rem;
+                    
+               }
+        
+                svg {
+                    width: 2rem;
+                    height: 1.3rem;
+                    margin-left: .4rem;
+                    
+                    path {
+                        fill: #fff400;
+                        stroke: black;
+                        stroke-width: 9;
+                    }
+                }
+            }
+        }
+
+        
+    
+
+        @include customQueryContactPage {
+            display: flex;
+
+            p {
+                align-self: center;
+            }
+        }
+
+
     }
 
     .buttons-container {
@@ -98,6 +163,7 @@
             box-shadow: -.2px 1px 3px rgb(0, 0, 0, 0.5);
             font-size: .8rem;
             width: 12rem;
+            cursor: pointer;
     
             p {
                 display: inline;

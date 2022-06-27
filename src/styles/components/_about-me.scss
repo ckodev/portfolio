@@ -2,7 +2,7 @@
 
 .about-me-container {
     padding: 1rem;
-    max-width: 75rem;
+    max-width: $MaxWidth;
 
     .about-me {
         position: fixed;
@@ -33,7 +33,7 @@
 
             path {
                 // fill: #fff400;
-                fill: $MainAccentColor;
+                fill: #fff400;
                 stroke: black;
                 stroke-width: 9;
             }

@@ -1,0 +1,63 @@
+@use '../base/variables' as *;
+
+.content-under-tabs {
+
+    h2 {
+        text-align: center;
+        padding: 1rem 0 2rem 0;
+    }
+
+    p {
+        padding: 0;
+    }
+
+    .take-aways {
+
+            padding: 0rem 1rem;
+            margin: auto;
+            max-width: 37rem;
+
+            @include desktopQuery {
+                padding: 0rem 3rem;
+                max-width: 40rem;
+            }
+    }
+
+
+
+    .highlight-container {
+        padding-bottom: 4rem;
+        
+        @include desktopQuery {
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .highlight-text-container {
+            padding: 1rem 1rem;
+            margin: auto;
+            max-width: 37rem;
+
+            @include desktopQuery {
+                padding: 1rem 3rem;
+                max-width: 40rem;
+            }
+        }
+
+        img {
+            width: 36rem;
+            border-radius: 10px;
+            box-shadow: $ButtonAndIconShadow;
+           
+
+            @include desktopQuery {
+                width: 25rem;
+                margin: auto;
+                margin-left: 2rem;
+            }
+        }
+    }
+
+    
+}

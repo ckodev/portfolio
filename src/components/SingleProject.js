@@ -14,7 +14,7 @@ import TabUnstyled from '@mui/base/TabUnstyled';
 
 
 
-function SingleProject() {
+function SingleProject({featuredImage}) {
 
     const { id } = useParams();
     const restPath = `https://ckodev.com/ckodev/wp-json/wp/v2/ckodev-project/${id}?_embed`
@@ -98,31 +98,32 @@ function SingleProject() {
         
         <article className='single-project-container'>
             {/* Project title */}
-            <h1 className='project-title' onClick={scrollToTop}>{restData.title.rendered} </h1>
+            <h2 className='project-title' onClick={scrollToTop}>{restData.title.rendered} </h2>
 
             {/* featured image */}
             <section className="image-overview-tool-container">
-                <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
-                <div className="tool-overview-container">
 
-                    {/* tools used */}
-                    <div className='tool-tile-container'>
-                        <h2 className='sr-only'>Development Tools</h2>
-                        {restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}
-                    </div>
-                    
-                    <div className="overview-links-container">
+                <div className="img-overview-container">
+                     <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
+
+                    <div className="overview">
                         {/* project overview */}
+                        <h1>{restData.title.rendered}</h1>
                         <p className='display-linebreak text-content'>{restData.acf.project_overview}</p>
                         <NavLink className="back" to="/PageProjects">&#8810; Back</NavLink>
-                        {/* Links to Live site & git hub */}
-                        <div className="link-container">
-                            <a className={activeClass} href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
-                            <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
-                        </div>
-                        
                     </div>
-                    
+                </div>
+
+                {/* tools used */}
+                <div className='tool-tile-container'>
+                    <h2 className='sr-only'>Development Tools</h2>
+                    {restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}
+                </div>
+
+                {/* Links to Live site & git hub */}
+                <div className="link-container">
+                    <a className={activeClass} href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
+                    <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
                 </div>
 
             </section>
@@ -134,8 +135,8 @@ function SingleProject() {
                 
 
 
-                <TabsUnstyled defaultValue={0}>
-                    <TabsListUnstyled className='Tabs'>
+                <TabsUnstyled defaultValue={0} className='content-under-tabs'>
+                    <TabsListUnstyled className={`Tabs ${activeClass}`}>
                         <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
                             {restData.acf.reflection_heading}
                         </TabUnstyled>

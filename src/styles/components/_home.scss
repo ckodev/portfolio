@@ -1,7 +1,8 @@
+@use '../base/variables' as *;
 
 .home-page-content-wrapper {
     margin-bottom: 3rem;
-    max-width: 75rem;
+    max-width: $MaxWidth;
 
     section {
         padding: 1rem;  

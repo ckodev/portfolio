@@ -58,13 +58,19 @@ function PageContact() {
            <div className="entry-content">
              <section className='contact-me-container' id='contact-me'>
                 <h1 className='header-heading' onClick={scrollToTop}>{restData.acf.h1}</h1>
-                <div className="h2-container">
+                <div className="h2-container-1">
                   <h2 className='page-heading'>{restData.acf.h2}</h2>
                   <FaWaveSquare/>
                 </div>
                 <div className="contact-message-container">
                   <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
-                  <p className='display-linebreak text-content'>{restData.acf.message_1} </p>
+                  <div className="content-right-container">
+                    <div className="h2-container-2">
+                      <h2 className='page-heading'>{restData.acf.h2}</h2>
+                      <FaWaveSquare/>
+                    </div>
+                    <p className='display-linebreak text-content'>{restData.acf.message_1} </p>
+                  </div>
                 </div>
 
 

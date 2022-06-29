@@ -1,6 +1,6 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import Loading from './Loading'
 import ProjectHighlights from './ProjectHighlights'
 import Tools from './Tools'
@@ -87,6 +87,10 @@ function SingleProject({featuredImage}) {
         changeAccentColor()
     }, [splitLocation]) 
 
+    const myRef = useRef(null)
+
+   const executeScroll = () => myRef.current.scrollIntoView()   
+
 
   return (
 
@@ -137,40 +141,38 @@ function SingleProject({featuredImage}) {
 
                 <TabsUnstyled defaultValue={0} className='content-under-tabs'>
                     <TabsListUnstyled className={`Tabs ${activeClass}`}>
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`} onClick={executeScroll}>
                             {restData.acf.reflection_heading}
                         </TabUnstyled>
 
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`} onClick={executeScroll}>
                             {restData.acf.project_highlights_heading}
                         </TabUnstyled>
 
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`} onClick={executeScroll}>
                             {restData.acf.development_heading}
                         </TabUnstyled>
                         
                         <span className={`Tabs__presentation-slider ${activeClass}`} role='presentation'></span>
                     </TabsListUnstyled>
 
-                   
-                   
                         <TabPanelUnstyled value={0}>
                             {/* take aways Section */}
-                            <section className="take-aways">
+                            <section className="take-aways" ref={myRef}>
                                     <h2>{restData.acf.reflection_heading}</h2>
                                     <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
                             </section>
                         </TabPanelUnstyled>
                         <TabPanelUnstyled value={1}>
                             {/* Project Highlights */}
-                            <section className="highlights-container">
+                            <section className="highlights-container" ref={myRef}>
                                 <h2>{restData.acf.project_highlights_heading}</h2>
                                 <div>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
                             </section>
                         </TabPanelUnstyled>
                         <TabPanelUnstyled value={2}>
                             {/* develoarticle */}
-                            <section className="development-container">
+                            <section className="development-container" ref={myRef}>
                                 <h2>{restData.acf.development_heading}</h2>
                                 <p className='display-linebreak text-content'>{restData.acf.development}</p>
                             </section>

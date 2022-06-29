@@ -42,7 +42,8 @@ function PageAbout() {
                   <h2 className=''>{restData.acf.h2}</h2>
                   <FaWaveSquare/>
                 </div>
-                <p className='display-linebreak text-content'>{restData.acf.about_me}</p>
+                {/* <p className='display-linebreak text-content'>{restData.acf.about_me}</p> */}
+                <div className='display-linebreak text-content' dangerouslySetInnerHTML={{__html:  restData.acf.about_me_wysi}}></div>
             </section>
   
           </div>

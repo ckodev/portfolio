@@ -1,26 +1,19 @@
 
 @use '../base/variables' as *;
 
-
+    // .Tabs-container {
+    //     background-color: blue;
+    //     /* width: 100rem; */
+    //     margin: auto;
+    // }
 
     .Tabs {
         position: sticky;
         top: 59px;
-        background: $GhostBomberAccentColor;
-        box-shadow: 0px 0px 3px -1px rgb(0, 0, 0, 0.25);
+        background-color: $bodyBackground;
+        // box-shadow: 0px 0px 3px -1px rgb(0, 0, 0, 0.25);
     
-        &.flower-box {
-            background: $FlowerBoxAccentColor;
-        }
-        &.Ghost-bomber {
-            background: $GhostBomberAccentColor;
-        }
-        &.portfolio {
-            background: $PortfolioAccentColor;
-        }
-        &.mustard {
-            background: $MustardAccentColor2;
-        }
+       
     
             &:after {
                 content: ' ';
@@ -33,10 +26,34 @@
         max-width: 36rem;
         margin: 1rem auto;
         padding-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.4rem;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
     
     
             button {
                 color: $black;
+                padding-top: 1rem;
+                // background-color: #886aff;
+                color: black;
+                padding-bottom:1rem;
+                border-radius:7px;
+                margin-left: 0.5rem;
+
+                &.flower-box {
+                    background: $FlowerBoxAccentColor;
+                }
+                &.ghost-bomber {
+                    background: $GhostBomberAccentColor;
+                }
+                &.portfolio {
+                    background: $PortfolioAccentColor;
+                }
+                &.mustard {
+                    background: $MustardAccentColor2;
+                }
             }
     
             &__tab {
@@ -53,18 +70,22 @@
     
                 &.TabUnstyled-root.Mui-selected.Tabs__tab.portfolio.Tab {
                     color: $PortfolioAccentColor;
+                    background-color: $black;
                     
                 }
                 &.TabUnstyled-root.Mui-selected.Tabs__tab.mustard.Tab {
                     color: $MustardAccentColor2;
+                    background-color: $black;
                     
                 }
                 &.TabUnstyled-root.Mui-selected.Tabs__tab.ghost-bomber.Tab {
                     color: $GhostBomberAccentColor;
+                    background-color: $black;
                     
                 }
                 &.TabUnstyled-root.Mui-selected.Tabs__tab.flower-box.Tab {
                     color: $FlowerBoxAccentColor;
+                    background-color: $black;
                     
                 }
     
@@ -85,33 +106,33 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 1.95rem;
-                @supports (-webkit-touch-callout: none) {
-                /* CSS specific to iOS devices */ 
-                    height: 1.8rem;
-                }
+            height: .25rem;
+                // @supports (-webkit-touch-callout: none) {
+                // /* CSS specific to iOS devices */ 
+                //     height: .25rem;
+                // }
             transform-origin: 0 0;
             transition: transform .4s;
             z-index: -1;
-            box-shadow: -0.2px 1px 3px rgb(0 0 0 / 20%);
+            // box-shadow: -0.2px 1px 3px rgb(0 0 0 / 20%);
             // border-radius: 7px;
     
             &.flower-box {
-                background-color: $black;
-                color: $FlowerBoxAccentColor;
+                background-color: $FlowerBoxAccentColor;
+                
             }
             &.portfolio {
-                background-color: $black;
-                color: $PortfolioAccentColor;
+                background-color: $PortfolioAccentColor;
+                
             }
             &.ghost-bomber {
-                background-color: $black;
-                color: $GhostBomberAccentColor;
+                background-color: $GhostBomberAccentColor;
+      
     
             }
             &.mustard {
-                background-color: $black;
-                color: $MustardAccentColor;
+                background-color: $MustardAccentColor;
+             
             }
         }
     

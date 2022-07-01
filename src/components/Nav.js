@@ -20,6 +20,7 @@ function Nav() {
     const { pathname } = location;
     const splitLocation = pathname.split("/");
     const [activeClass, setActiveClass] = useState('')
+    const [navHidden, setNavHidden] = useState('')
 
     useEffect(() => {
 
@@ -39,9 +40,18 @@ function Nav() {
         changeAccentColor()
     }, [splitLocation])
 
+    useEffect(()=> {
+        const hiddenNav = () => {
+          if (splitLocation[0] === '') {
+            setNavHidden('hidden');
+          }
+        }
+        hiddenNav();
+    }, [splitLocation])
+
     
   return (
-    <div >
+    <div className={`main-nav-container ${navHidden}`}>
         <nav className='main-nav'>
             <ul>
                 <li >

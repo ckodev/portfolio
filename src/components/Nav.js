@@ -8,11 +8,6 @@ import { useLocation } from "react-router-dom"
 import {useState, useEffect} from 'react'
 
 
-
-
-
-
-
 function Nav() {
 
 
@@ -54,13 +49,13 @@ function Nav() {
     <div className={`main-nav-container ${navHidden}`}>
         <nav className='main-nav'>
             <ul>
-                <li >
+                {/* <li >
                     <NavLink smooth to="/" >
                     <span className='menu-active'></span>
                         <HomeIcon/>
                         <p>Home</p>
                     </NavLink>
-                </li>
+                </li> */}
                 <li >
                     <NavLink to="/PageAbout" >
                     <span className='menu-active'></span>

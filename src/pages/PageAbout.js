@@ -38,11 +38,14 @@ function PageAbout() {
             
             <section className='about-me-container' id='about-me'>
                 <h1 className='about-me' onClick={scrollToTop}>{restData.acf.h1}</h1>
-                <div className="h2-container">
-                  <h2 className=''>{restData.acf.h2}</h2>
-                  <FaWaveSquare/>
+                <div className="content-container">
+                  <div className="h2-container">
+                    <h2 className=''>{restData.acf.h2}</h2>
+                    <FaWaveSquare/>
+                  </div>
+                  {/* <p className='display-linebreak text-content'>{restData.acf.about_me}</p> */}
+                  <div className='display-linebreak text-content' dangerouslySetInnerHTML={{__html:  restData.acf.about_me_wysi}}></div>
                 </div>
-                <p className='display-linebreak text-content'>{restData.acf.about_me}</p>
             </section>
   
           </div>

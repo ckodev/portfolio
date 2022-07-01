@@ -11,6 +11,9 @@ function Header() {
     const { pathname } = location;
     const splitLocation = pathname.split("/");
     const [activeClass, setActiveClass] = useState('')
+    const [headerClass, setheaderClass] = useState('')
+
+    console.log(splitLocation)
 
     useEffect(() => {
 
@@ -22,17 +25,29 @@ function Header() {
             } else if (splitLocation[2] === '13') {
                 setActiveClass('active ghost-bomber')
             } else if (splitLocation[2] === '12') {
-                setActiveClass('active mustard')
+                setActiveClass('active mustard') 
             } else {
                 setActiveClass('')
             }
         }
         changeAccentColor()
     }, [splitLocation])
+
+    useEffect(()=> {
+        const hiddenHeader = () => {
+          if (splitLocation[1] === '') {
+            setheaderClass('hidden');
+          } else {
+            setheaderClass('');
+          }
+        }
+        hiddenHeader();
+    }, [splitLocation])
+
   return (
 
 
-    <header>
+    <header className={headerClass}>
         <div className="header-content-container">
           <h1 className='sr-only'>ckodev</h1>
           <Link to="/" spy={true} smooth={true}  duration={700} offset={-100}><HomeLogo className={activeClass} /></Link>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from '../components/Header';
-import Nav from '../components/Nav';
+// import Nav from '../components/Nav';
 import SingleProject from '../components/SingleProject';
 import PageAbout from '../pages/PageAbout';
 import PageHome from '../pages/PageHome';
@@ -38,7 +38,6 @@ const handleProjectData = (newData) => {
                 <Route path='/PageContact' element={<PageContact  />}/>
             </Routes>
             
-            <Nav projectData={projectData}/>
         </div>
     </BrowserRouter>
   )

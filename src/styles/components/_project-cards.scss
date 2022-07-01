@@ -45,6 +45,10 @@
         &:visited {
             color: $black;
         }
+
+        @include desktopQuery {
+            height: 8.25rem;
+        }
     }
 
     h2 {
@@ -64,6 +68,11 @@
         height: 6.25rem;
         background-color: $MainAccentColor;
 
+        @include desktopQuery {
+            height: 8.25rem;
+        }
+    
+
         img {position: absolute;
             width: 60%;
             max-width: 5rem;
@@ -71,7 +80,11 @@
             right: -5px;
             transform: rotate(20deg);
             box-shadow: 5px 5px 10px black;
-            border-radius: 3px 
+            border-radius: 3px; 
+            
+            @include desktopQuery {
+                max-width: 6.2rem;
+            }
             
         }
     }
@@ -90,6 +103,10 @@
             align-self: center;
             font-size: .8rem;
             padding: 0 1rem;
+
+            @include desktopQuery {
+                font-size: 1.1rem;
+            }
     
         }
     

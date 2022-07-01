@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
-import {FaCoffee, FaHandHolding, FaHandPeace, FaWaveSquare, FaWpbeginner} from 'react-icons/fa';
+import {FaWaveSquare} from 'react-icons/fa';
 
 function PageAbout() {
 
@@ -43,8 +43,9 @@ function PageAbout() {
                     <h2 className=''>{restData.acf.h2}</h2>
                     <FaWaveSquare/>
                   </div>
-                  {/* <p className='display-linebreak text-content'>{restData.acf.about_me}</p> */}
                   <div className='display-linebreak text-content' dangerouslySetInnerHTML={{__html:  restData.acf.about_me_wysi}}></div>
+                  <p className='location'>Location: {restData.acf.location}</p>
+                  <img src={restData._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url} alt="" />
                 </div>
             </section>
   

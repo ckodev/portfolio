@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 // import { Link, animateScroll as scroll } from "react-scroll";
 import {useState, useEffect} from 'react'
 import { useLocation } from "react-router-dom"
+import Nav from '../components/Nav';
 
 function Header() {
 
@@ -52,6 +53,8 @@ function Header() {
           <h1 className='sr-only'>ckodev</h1>
           <Link to="/" spy={true} smooth={true}  duration={700} offset={-100}><HomeLogo className={activeClass} /></Link>
         </div>
+
+        <Nav />
     </header>
 
 

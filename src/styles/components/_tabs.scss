@@ -62,7 +62,7 @@
                 text-align: center;
                 background: none;
                 border: none;
-                font-size: .75rem;
+                font-size: .85rem;
                 cursor: pointer;
                 margin-top: .5rem;
                
@@ -71,21 +71,29 @@
                 &.TabUnstyled-root.Mui-selected.Tabs__tab.portfolio.Tab {
                     color: $PortfolioAccentColor;
                     background-color: $black;
+                    font-weight: 600;
+                    
                     
                 }
                 &.TabUnstyled-root.Mui-selected.Tabs__tab.mustard.Tab {
                     color: $MustardAccentColor2;
                     background-color: $black;
+                    font-weight: 600;
+                    
                     
                 }
                 &.TabUnstyled-root.Mui-selected.Tabs__tab.ghost-bomber.Tab {
                     color: $GhostBomberAccentColor;
                     background-color: $black;
+                    font-weight: 600;
+                    
                     
                 }
                 &.TabUnstyled-root.Mui-selected.Tabs__tab.flower-box.Tab {
                     color: $FlowerBoxAccentColor;
                     background-color: $black;
+                    font-weight: 600;
+                    
                     
                 }
     

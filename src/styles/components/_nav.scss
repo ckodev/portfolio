@@ -1,5 +1,11 @@
 @use '../base/variables' as *;
+.main-nav-container {
+    max-width: 70rem;
+    display: flex;
+    justify-content: flex-end;
+    margin: auto;
 
+}
 
 .main-nav {
     position: fixed;
@@ -14,6 +20,8 @@
         z-index: 15;
         background: none;
         box-shadow: none;
+        width: initial;
+        
     }
 
     ul {

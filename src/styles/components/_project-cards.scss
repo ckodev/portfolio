@@ -6,9 +6,10 @@
     margin: auto;
     max-width: $MaxWidth;
     width: 100%;
+    margin-top: 5%;
 
     @include desktopQuery {
-        margin-top: 5%;
+        
     }
 
     .featured-project {

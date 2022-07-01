@@ -4,6 +4,26 @@
     padding: 1rem;
     max-width: $MaxWidth;
 
+    @include desktopQuery {
+        margin-top: 5%;
+    }
+
+    .content-container {
+        max-width: 95%;
+        margin: auto;
+
+        @include tabletQuery {
+            max-width: 80%;
+           
+
+           @include desktopQuery {
+            max-width: 65%;
+           }
+        }
+       
+     
+    }
+
     .about-me {
         position: fixed;
         top: 1.25rem;
@@ -46,5 +66,12 @@
         padding-top: 1rem;
         line-height: 1.6;
         font-size: .96rem;
+
+        p {
+            line-height: 1.6;
+            font-size: .96rem;
+        }
+
+
     }
 }

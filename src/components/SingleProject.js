@@ -1,6 +1,6 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
-import {useState, useEffect, useRef} from 'react'
+import {useState, useEffect} from 'react'
 import Loading from './Loading'
 import ProjectHighlights from './ProjectHighlights'
 import Tools from './Tools'
@@ -11,10 +11,11 @@ import TabsUnstyled from '@mui/base/TabsUnstyled';
 import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import TabUnstyled from '@mui/base/TabUnstyled';
+// import {Link} from 'react-scroll'
 
 
 
-function SingleProject({featuredImage}) {
+function SingleProject() {
 
     const { id } = useParams();
     const restPath = `https://ckodev.com/ckodev/wp-json/wp/v2/ckodev-project/${id}?_embed`
@@ -60,15 +61,32 @@ function SingleProject({featuredImage}) {
         fetchData()
     }, [restPath2])
 
-    function scrollToTop() {
-        window.scrollTo({top:0, behavior:'smooth'} );
-      }
+   
 
 
     const location = useLocation();
     const { pathname } = location;
     const splitLocation = pathname.split("/");
     const [activeClass, setActiveClass] = useState('')
+
+
+
+//     const [projectId, setProjectId] = useState('')
+//     const [projectSlug, setProjectSlug] = useState('')
+//     useEffect(() => {
+//         setProjectId(restData.id)
+//         setProjectSlug(restData.slug)
+//     const changeAccentColor = () => {
+       
+//         if (parseInt(splitLocation[2]) === projectId) {
+//             setActiveClass(projectSlug)
+//         } else {
+//             setActiveClass('')
+//         }
+//     }
+//     changeAccentColor()
+// }, [splitLocation, projectId, projectSlug, restData.id, restData.slug]) 
+
  
     useEffect(() => {
         const changeAccentColor = () => {
@@ -87,9 +105,10 @@ function SingleProject({featuredImage}) {
         changeAccentColor()
     }, [splitLocation]) 
 
-    const myRef = useRef(null)
-
-   const executeScroll = () => myRef.current.scrollIntoView()   
+    function scrollToTop() {
+        window.scrollTo({top:0, behavior:'smooth'} );
+    }
+  
 
 
   return (
@@ -110,7 +129,7 @@ function SingleProject({featuredImage}) {
                 <div className="img-overview-container">
                      <img src={restData._embedded['wp:featuredmedia'][0].source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
 
-                    <div className="overview">
+                    <div className="overview" id="tab-content">
                         {/* project overview */}
                         <h1>{restData.title.rendered}</h1>
                         <p className='display-linebreak text-content'>{restData.acf.project_overview}</p>
@@ -119,13 +138,13 @@ function SingleProject({featuredImage}) {
                 </div>
 
                 {/* tools used */}
-                <div className='tool-tile-container'>
+                <div className='tool-tile-container' id="tab-content">
                     <h2 className='sr-only'>Development Tools</h2>
                     {restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}
                 </div>
 
                 {/* Links to Live site & git hub */}
-                <div className="link-container">
+                <div className="link-container" id="tab-content">
                     <a className={activeClass} href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
                     <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
                 </div>
@@ -141,15 +160,15 @@ function SingleProject({featuredImage}) {
 
                 <TabsUnstyled defaultValue={0} className='content-under-tabs'>
                     <TabsListUnstyled className={`Tabs ${activeClass}`}>
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`} onClick={executeScroll}>
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`} >
                             {restData.acf.reflection_heading}
                         </TabUnstyled>
 
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`} onClick={executeScroll}>
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
                             {restData.acf.project_highlights_heading}
                         </TabUnstyled>
 
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`} onClick={executeScroll}>
+                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
                             {restData.acf.development_heading}
                         </TabUnstyled>
                         
@@ -158,21 +177,21 @@ function SingleProject({featuredImage}) {
 
                         <TabPanelUnstyled value={0}>
                             {/* take aways Section */}
-                            <section className="take-aways" ref={myRef}>
+                            <section className="take-aways" >
                                     <h2>{restData.acf.reflection_heading}</h2>
                                     <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
                             </section>
                         </TabPanelUnstyled>
                         <TabPanelUnstyled value={1}>
                             {/* Project Highlights */}
-                            <section className="highlights-container" ref={myRef}>
+                            <section className="highlights-container">
                                 <h2>{restData.acf.project_highlights_heading}</h2>
-                                <div>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
+                                <div className='hl'>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
                             </section>
                         </TabPanelUnstyled>
                         <TabPanelUnstyled value={2}>
                             {/* develoarticle */}
-                            <section className="development-container" ref={myRef}>
+                            <section className="development-container" >
                                 <h2>{restData.acf.development_heading}</h2>
                                 <p className='display-linebreak text-content'>{restData.acf.development}</p>
                             </section>

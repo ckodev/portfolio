@@ -7,11 +7,12 @@ import Tools from './Tools'
 import SliderGallery from './SliderGallery'
 import { useLocation } from "react-router-dom"
 import {NavLink} from 'react-router-dom'
-import TabsUnstyled from '@mui/base/TabsUnstyled';
-import TabsListUnstyled from '@mui/base/TabsListUnstyled';
-import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
-import TabUnstyled from '@mui/base/TabUnstyled';
+// import TabsUnstyled from '@mui/base/TabsUnstyled';
+// import TabsListUnstyled from '@mui/base/TabsListUnstyled';
+// import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
+// import TabUnstyled from '@mui/base/TabUnstyled';
 // import {Link} from 'react-scroll'
+import {FaChevronDown} from 'react-icons/fa';
 
 
 
@@ -109,7 +110,28 @@ function SingleProject() {
         window.scrollTo({top:0, behavior:'smooth'} );
     }
   
+    const [takeawayActive, setTakeawayActive] = useState('')
+    const [highlightActive, sethighlightActive] = useState('')
+    const [processActive, setProcessActive] = useState('')
+  
+    const toggleTakeaway = () => {
+        setTakeawayActive(takeawayActive === "" ? "active" : "")
+        sethighlightActive("")
+        setProcessActive("")
+    }
+    const toggleHighlight = () => {
+        setTakeawayActive("")
+        sethighlightActive(highlightActive === "" ? "active" : "")
+        setProcessActive("")
+    }
+    const toggleProcess = () => {
+        setTakeawayActive("")
+        sethighlightActive("")
+        setProcessActive(processActive === "" ? "active" : "")
+    }
 
+   
+   
 
   return (
 
@@ -154,50 +176,92 @@ function SingleProject() {
            
 
 
-            <div className="project-info-container">
+        <div className="project-info-container">
                 
+            <div className='content-under-tabs'>
 
+                <div className={`accordion-section`}>
 
-                <TabsUnstyled defaultValue={0} className='content-under-tabs'>
-                    <TabsListUnstyled className={`Tabs ${activeClass}`}>
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`} >
-                            {restData.acf.reflection_heading}
-                        </TabUnstyled>
+                    <button  className={`accordion-title ${takeawayActive}`} onClick={toggleTakeaway}>
+                        <p>{restData.acf.reflection_heading}</p>
+                        <FaChevronDown/>
+                    </button>
 
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
-                            {restData.acf.project_highlights_heading}
-                        </TabUnstyled>
-
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
-                            {restData.acf.development_heading}
-                        </TabUnstyled>
-                        
-                        <span className={`Tabs__presentation-slider ${activeClass}`} role='presentation'></span>
-                    </TabsListUnstyled>
-
-                        <TabPanelUnstyled value={0}>
-                            {/* take aways Section */}
-                            <section className="take-aways" >
+                   
+                        <div className={`accordion-content ${takeawayActive}`}>
+                             {/* take aways Section */}
+                             <section className={`take-aways`} >
                                     <h2>{restData.acf.reflection_heading}</h2>
                                     <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
                             </section>
-                        </TabPanelUnstyled>
-                        <TabPanelUnstyled value={1}>
-                            {/* Project Highlights */}
-                            <section className="highlights-container">
+                        </div>
+                    
+
+                </div>
+                <div className={`accordion-section`}>
+
+                    <button className={`accordion-title ${highlightActive}`} onClick={toggleHighlight}>
+                        <p>{restData.acf.project_highlights_heading}</p>
+                        <FaChevronDown/>
+                    </button>
+
+                   
+                        <div className={`accordion-content ${highlightActive}`}>
+                             {/* Project Highlights */}
+                             <section className={`highlights-container`}>
                                 <h2>{restData.acf.project_highlights_heading}</h2>
                                 <div className='hl'>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
                             </section>
-                        </TabPanelUnstyled>
-                        <TabPanelUnstyled value={2}>
-                            {/* develoarticle */}
-                            <section className="development-container" >
+                        </div>
+                    
+
+                </div>
+                <div className={`accordion-section `}>
+
+                    <button className={`accordion-title ${processActive}`} onClick={toggleProcess}>
+                        <p>{restData.acf.development_heading}</p>
+                        <FaChevronDown/>
+                    </button>
+
+                   
+                        <div className={`accordion-content ${processActive}`}>
+                              {/* develoarticle */}
+                            <section className={`development-container`} >
                                 <h2>{restData.acf.development_heading}</h2>
                                 <p className='display-linebreak text-content'>{restData.acf.development}</p>
                             </section>
-                        </TabPanelUnstyled>
-                </TabsUnstyled>
+                        </div>
+                 
+
+                </div>
+
+            
+                 
+                      
+                            
+                    
+
+                      
+                            
+              
+
+                    
+                         
+                  
+                        
+                    
+           
+
+               
+                           
+                  
+                           
+                   
+                           
+                     
+        
             </div>
+        </div>
 
 
 

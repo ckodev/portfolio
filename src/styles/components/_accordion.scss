@@ -1,0 +1,42 @@
+@use '../base/variables' as *;
+
+
+.accordion-section {
+
+    .accordion-title {
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        display: flex;
+        max-width: 40rem;
+        background: none;
+        border: none;
+        margin: auto;
+        margin-bottom: 1rem;
+
+        &.active {
+
+            svg {
+                transition: transform .7s ease-in-out;
+                transform: rotate(180deg);
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+
+    .accordion-content {
+        overflow: hidden;
+        transition: max-height .75s ease-in-out;
+        max-height: 0;
+
+        &.active {
+            max-height: 1400px;
+        }
+
+       
+    }
+}

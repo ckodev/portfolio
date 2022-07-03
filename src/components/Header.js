@@ -14,7 +14,7 @@ function Header() {
     const [activeClass, setActiveClass] = useState('')
     const [headerClass, setheaderClass] = useState('')
 
-    console.log(splitLocation)
+
 
     useEffect(() => {
 

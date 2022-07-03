@@ -13,6 +13,13 @@
         border: none;
         margin: auto;
         margin-bottom: 1rem;
+        border-bottom: 1px solid black;
+        padding-bottom: 1rem;
+        color: black;
+
+
+        
+
 
         &.active {
 
@@ -32,9 +39,11 @@
         overflow: hidden;
         transition: max-height .75s ease-in-out;
         max-height: 0;
+        
 
         &.active {
-            max-height: 1400px;
+            max-height: 1800px;
+            margin-bottom: 2rem;
         }
 
        

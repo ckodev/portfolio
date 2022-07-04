@@ -131,7 +131,7 @@ function SingleProject() {
     }
 
    
-   
+  
 
   return (
 
@@ -234,41 +234,16 @@ function SingleProject() {
                  
 
                 </div>
-
-            
-                 
-                      
-                            
-                    
-
-                      
-                            
-              
-
-                    
-                         
-                  
-                        
-                    
-           
-
-               
-                           
-                  
-                           
-                   
-                           
-                     
+  
         
             </div>
         </div>
 
-
-
-            
-
             {/* slider section - links to my other projects */}
-            <SliderGallery projectData={restData2} />
+            <div className="slider-container">
+                <h2>More Projects</h2>
+                <SliderGallery projectData={restData2} />
+            </div>
 
         </article>
         

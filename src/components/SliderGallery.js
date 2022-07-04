@@ -15,8 +15,7 @@ function SliderGallery({projectData}) {
   return (
 
     <section className='slider'>
-   
-      
+        
         {projectData.map((slide, index) => {
           return(
             <Link to={`/SingleProject/${slide.id}`} onClick={scrollToTop}>
@@ -25,9 +24,6 @@ function SliderGallery({projectData}) {
             </Link>
           )
         })}
-      
-
-      
     </section>
    
   )

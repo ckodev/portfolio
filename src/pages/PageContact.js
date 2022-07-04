@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
-import { FaEnvelope, FaCopy, FaWaveSquare } from 'react-icons/fa';
+import { FaWaveSquare, FaCopy, FaEnvelope } from 'react-icons/fa';
+
 
 function PageContact() {
 
@@ -79,7 +80,6 @@ function PageContact() {
                   <p className='email-address' onClick={handleClick}>{restData.acf.email}</p>
                   <a href={`mailto:${restData.acf.email}?subject=The%20Matrix%20was%20a%20documentary&body=I%20look%20forward%20to%20hearing%20from%20you!`}><button><p className='button-text'>Open email client</p><FaEnvelope/></button></a>
                 </div>
-               
                
               </section>
            </div>

@@ -245,6 +245,9 @@ function SingleProject() {
                 <SliderGallery projectData={restData2} />
             </div>
 
+
+
+
         </article>
         
         

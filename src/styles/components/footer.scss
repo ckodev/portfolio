@@ -1,0 +1,16 @@
+@use '../base/variables' as *;
+
+.footer-container {
+    text-align: center;
+    color: black;
+
+    a {
+        color: $black;
+
+        &:visited {
+            color: $black;
+        }
+    }
+
+    
+}

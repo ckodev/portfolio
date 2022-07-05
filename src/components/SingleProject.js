@@ -7,11 +7,6 @@ import Tools from './Tools'
 import SliderGallery from './SliderGallery'
 import { useLocation } from "react-router-dom"
 import {NavLink} from 'react-router-dom'
-// import TabsUnstyled from '@mui/base/TabsUnstyled';
-// import TabsListUnstyled from '@mui/base/TabsListUnstyled';
-// import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
-// import TabUnstyled from '@mui/base/TabUnstyled';
-// import {Link} from 'react-scroll'
 import {FaChevronDown} from 'react-icons/fa';
 
 
@@ -210,7 +205,7 @@ function SingleProject() {
                              {/* Project Highlights */}
                              <section className={`highlights-container`}>
                                 <h2>{restData.acf.project_highlights_heading}</h2>
-                                <div className='hl'>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
+                                <div className='hl'>{restData.acf.project_highlights.map(highlight => <ProjectHighlights param={id} key={highlight.highlight_video.url} highlight={highlight}/>)}</div>
                             </section>
                         </div>
                     

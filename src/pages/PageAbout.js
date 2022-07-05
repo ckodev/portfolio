@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
 import {FaWaveSquare} from 'react-icons/fa';
+import Footer from '../components/Footer';
 
 function PageAbout() {
 
@@ -48,7 +49,7 @@ function PageAbout() {
                   <img src={restData._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url} alt="" />
                 </div>
             </section>
-  
+            <Footer/>
           </div>
         : 
           <Loading />

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
 import { FaWaveSquare, FaCopy, FaEnvelope } from 'react-icons/fa';
+import Footer from '../components/Footer';
 
 
 function PageContact() {
@@ -82,6 +83,7 @@ function PageContact() {
                 </div>
                
               </section>
+              <Footer/>
            </div>
         : 
           <Loading />

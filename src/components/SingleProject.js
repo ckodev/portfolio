@@ -8,6 +8,7 @@ import SliderGallery from './SliderGallery'
 import { useLocation } from "react-router-dom"
 import {NavLink} from 'react-router-dom'
 import {FaChevronDown} from 'react-icons/fa';
+import Footer from './Footer'
 
 
 
@@ -64,24 +65,6 @@ function SingleProject() {
     const { pathname } = location;
     const splitLocation = pathname.split("/");
     const [activeClass, setActiveClass] = useState('')
-
-
-
-//     const [projectId, setProjectId] = useState('')
-//     const [projectSlug, setProjectSlug] = useState('')
-//     useEffect(() => {
-//         setProjectId(restData.id)
-//         setProjectSlug(restData.slug)
-//     const changeAccentColor = () => {
-       
-//         if (parseInt(splitLocation[2]) === projectId) {
-//             setActiveClass(projectSlug)
-//         } else {
-//             setActiveClass('')
-//         }
-//     }
-//     changeAccentColor()
-// }, [splitLocation, projectId, projectSlug, restData.id, restData.slug]) 
 
  
     useEffect(() => {
@@ -143,8 +126,6 @@ function SingleProject() {
         setProjectsActive(projectsActive === "" ? "active" : "")
     }
 
-   
- 
 
   return (
 
@@ -201,13 +182,13 @@ function SingleProject() {
                     </button>
 
                    
-                        <div className={`accordion-content ${takeawayActive}`}>
-                             {/* take aways Section */}
-                             <section className={`take-aways`} >
-                                    <h2>{restData.acf.reflection_heading}</h2>
-                                    <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
-                            </section>
-                        </div>
+                    <div className={`accordion-content ${takeawayActive}`}>
+                            {/* take aways Section */}
+                            <section className={`take-aways`} >
+                                <h2>{restData.acf.reflection_heading}</h2>
+                                <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
+                        </section>
+                    </div>
                     
 
                 </div>
@@ -219,13 +200,13 @@ function SingleProject() {
                     </button>
 
                    
-                        <div className={`accordion-content ${highlightActive}`}>
-                             {/* Project Highlights */}
-                             <section className={`highlights-container`}>
-                                <h2>{restData.acf.project_highlights_heading}</h2>
-                                <div className='hl'>{restData.acf.project_highlights.map(highlight => <ProjectHighlights param={id} key={highlight.highlight_video.url} highlight={highlight}/>)}</div>
-                            </section>
-                        </div>
+                    <div className={`accordion-content ${highlightActive}`}>
+                            {/* Project Highlights */}
+                            <section className={`highlights-container`}>
+                            <h2>{restData.acf.project_highlights_heading}</h2>
+                            <div className='hl'>{restData.acf.project_highlights.map(highlight => <ProjectHighlights param={id} key={highlight.highlight_video.url} highlight={highlight}/>)}</div>
+                        </section>
+                    </div>
                     
 
                 </div>
@@ -237,15 +218,14 @@ function SingleProject() {
                     </button>
 
                    
-                        <div className={`accordion-content ${processActive}`}>
-                              {/* develoarticle */}
-                            <section className={`development-container`} >
-                                <h2>{restData.acf.development_heading}</h2>
-                                <p className='display-linebreak text-content'>{restData.acf.development}</p>
-                            </section>
-                        </div>
+                    <div className={`accordion-content ${processActive}`}>
+                            {/* develoarticle */}
+                        <section className={`development-container`} >
+                            <h2>{restData.acf.development_heading}</h2>
+                            <p className='display-linebreak text-content'>{restData.acf.development}</p>
+                        </section>
+                    </div>
                  
-
                 </div>
 
                 <div className={`accordion-section `}>
@@ -255,22 +235,22 @@ function SingleProject() {
                         <FaChevronDown/>
                     </button>
 
-                   
-                        <div className={`accordion-content ${projectsActive}`}>
-                             {/* slider section - links to my other projects */}
-                            <div className="slider-container">
-                                <h2>More Projects</h2>
-                                <SliderGallery toggleTabs={toggleTabs} projectData={restData2} />
-                            </div>
+                    <div className={`accordion-content ${projectsActive}`}>
+                            {/* slider section - links to my other projects */}
+                        <div className="slider-container">
+                            <h2>More Projects</h2>
+                            <SliderGallery toggleTabs={toggleTabs} projectData={restData2} />
                         </div>
-                 
-
+                    </div>
+                
                 </div>
   
         
             </div>
         </div>
         </article>
+
+        <Footer/>
         
         
     </div>

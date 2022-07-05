@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import Footer from '../components/Footer'
 import Loading from '../components/Loading'
 import ProjectCard from '../components/ProjectCard'
 
@@ -44,6 +45,7 @@ function PageProjects({handleProjectData}) {
                 {restData.map(project=> <ProjectCard key={project.id} project={project}/>)}
                 
             </section>
+            <Footer/>
           </div>
         : 
           <Loading />

@@ -4,9 +4,6 @@ import React from 'react'
 function ProjectHighlights({highlight}) {
 
 
-  
-console.log(highlight)
- 
 
   return (
    

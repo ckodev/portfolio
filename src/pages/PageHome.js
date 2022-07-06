@@ -25,6 +25,7 @@ function PageHome() {
                 <Dot/>
                 <EyeBrowLeft/>
                 <EyeBrowRight/>
+                <p>click anywhere...</p>
               
             </div>
       </Link>

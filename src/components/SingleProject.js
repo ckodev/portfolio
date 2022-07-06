@@ -162,7 +162,8 @@ function SingleProject() {
                 {/* Links to Live site & git hub */}
                 <div className="link-container" id="tab-content">
                     <a className={activeClass} href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
-                    <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
+                    {splitLocation[2] === '15' ? <></> :  <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>}
+                   
                 </div>
 
             </section>

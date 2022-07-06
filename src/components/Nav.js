@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import AboutIcon from '../svgs/AboutIcon'
-import HomeIcon from '../svgs/HomeIcon'
+
 import ProjectsIcon from '../svgs/ProjectsIcon'
 import ContactIcon from '../svgs/ContactIcon'
 import { useLocation } from "react-router-dom"
@@ -64,14 +64,14 @@ function Nav() {
                     </NavLink>
                 </li>
                 <li >
-                    <NavLink className={activeClass}  smooth to="/PageProjects" >
+                    <NavLink className={activeClass} to="/PageProjects" >
                     <span className='menu-active'></span>
                         <ProjectsIcon/>
                         <p>Projects</p>
                     </NavLink>
                 </li>
                 <li >
-                    <NavLink smooth to="/PageContact" >
+                    <NavLink to="/PageContact" >
                     <span className='menu-active'></span>
                         <ContactIcon/>
                         <p>Contact</p>

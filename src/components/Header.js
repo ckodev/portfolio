@@ -51,7 +51,7 @@ function Header() {
     <header className={headerClass}>
         <div className="header-content-container">
           <h1 className='sr-only'>ckodev</h1>
-          <Link to="/" spy={true} smooth={true}  duration={700} offset={-100}><HomeLogo className={activeClass} /></Link>
+          <Link to="/" ><HomeLogo className={activeClass} /></Link>
         </div>
 
         <Nav />

@@ -186,7 +186,8 @@ function SingleProject() {
                             {/* take aways Section */}
                             <section className={`take-aways`} >
                                 <h2>{restData.acf.reflection_heading}</h2>
-                                <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
+                                {/* <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p> */}
+                                <div className='display-linebreak text-content' dangerouslySetInnerHTML={{__html:  restData.acf.project_reflection}}></div>
                         </section>
                     </div>
                     
@@ -222,7 +223,8 @@ function SingleProject() {
                             {/* develoarticle */}
                         <section className={`development-container`} >
                             <h2>{restData.acf.development_heading}</h2>
-                            <p className='display-linebreak text-content'>{restData.acf.development}</p>
+                            {/* <p className='display-linebreak text-content'>{restData.acf.development}</p> */}
+                            <div className='display-linebreak text-content' dangerouslySetInnerHTML={{__html:  restData.acf.development}}></div>
                         </section>
                     </div>
                  

@@ -8,7 +8,7 @@ function SliderGallery({projectData, toggleTabs}) {
  
 
   function scrollToTop() {
-    window.scroll({top:0, behavior:'smooth'} );
+    setTimeout(function() {window.scroll({top:0, behavior:'smooth'} );},1)
     toggleTabs();
   }
   

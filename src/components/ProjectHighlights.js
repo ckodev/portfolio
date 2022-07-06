@@ -18,7 +18,8 @@ function ProjectHighlights({highlight}) {
             </video>
             <div className="highlight-text-container">
               <h3>{highlight.title}</h3>
-              <p className='display-linebreak'>{highlight.highlight_description}</p>
+              {/* <p className='display-linebreak'>{highlight.highlight_description}</p> */}
+              <div className='display-linebreak' dangerouslySetInnerHTML={{__html:  highlight.highlight_wysi}}></div>
             </div>
         </div>
     </div>

@@ -8,6 +8,7 @@ import PageHome from '../pages/PageHome';
 import PageProjects from '../pages/PageProjects';
 import PageContact from '../pages/PageContact';
 import {useState} from 'react'
+import Page404 from '../components/Page404'
 
 
 
@@ -23,8 +24,6 @@ const handleProjectData = (newData) => {
 
 
 
-  
-
   return (
     <BrowserRouter basename="/">
         <div className='wrapper'>
@@ -36,6 +35,7 @@ const handleProjectData = (newData) => {
                 <Route path='/PageProjects' element={<PageProjects handleProjectData={handleProjectData}/>}/>
                 <Route path='/SingleProject/:id' element={<SingleProject projectData={projectData} />}/>
                 <Route path='/PageContact' element={<PageContact  />}/>
+                <Route path='*' element={<Page404 />}/>
             </Routes>
             
         </div>

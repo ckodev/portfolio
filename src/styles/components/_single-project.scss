@@ -153,10 +153,10 @@
                     fill: $PortfolioAccentColor;
                 }
             }
-            & .flower-box svg {
+            & .fdm svg {
                 background-color: $black;
                 path {
-                    fill: $FlowerBoxAccentColor;
+                    fill: $fdmAccentColor;
                 }
             }
             & .mustard svg {
@@ -202,9 +202,9 @@
                 background-color: $black;
                 color: $GhostBomberAccentColor;
             }
-            &.flower-box {
+            &.fdm {
                 background-color: $black;
-                color: $FlowerBoxAccentColor;
+                color: $fdmAccentColor;
             }
             &.portfolio {
                 background-color: $black;

@@ -42,8 +42,8 @@
                 border-radius:7px;
                 margin-left: 0.5rem;
 
-                &.flower-box {
-                    background: $FlowerBoxAccentColor;
+                &.fdm {
+                    background: $fdmAccentColor;
                 }
                 &.ghost-bomber {
                     background: $GhostBomberAccentColor;
@@ -89,8 +89,8 @@
                     
                     
                 }
-                &.TabUnstyled-root.Mui-selected.Tabs__tab.flower-box.Tab {
-                    color: $FlowerBoxAccentColor;
+                &.TabUnstyled-root.Mui-selected.Tabs__tab.fdm.Tab {
+                    color: $fdmAccentColor;
                     background-color: $black;
                     font-weight: 600;
                     
@@ -125,8 +125,8 @@
             // box-shadow: -0.2px 1px 3px rgb(0 0 0 / 20%);
             // border-radius: 7px;
     
-            &.flower-box {
-                background-color: $FlowerBoxAccentColor;
+            &.fdm {
+                background-color: $fdmAccentColor;
                 
             }
             &.portfolio {

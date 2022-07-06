@@ -9,7 +9,7 @@ function PageAbout() {
 
     const [isLoaded, setLoaded] = useState(false)
     
-    const restPath = 'http://ckodev.com/ckodev/wp-json/wp/v2/pages/98?_embed';
+    const restPath = 'https://ckodev.com/ckodev/wp-json/wp/v2/pages/98?_embed';
     const [restData, setData] = useState([])
     
     useEffect(() => {

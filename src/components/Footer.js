@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <div className='footer-container'>
-        <a href="ckodev.com">&copy;ckodev</a>
+        <p>&copy;ckodev</p>
     </div>
   )
 }

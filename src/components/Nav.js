@@ -21,7 +21,7 @@ function Nav() {
 
         const changeAccentColor = () => {
             if (splitLocation[2] === '15') {
-                setActiveClass('active flower-box')
+                setActiveClass('active fdm')
             } else if (splitLocation[2] === '14') {
                 setActiveClass('active portfolio')
             } else if (splitLocation[2] === '13') {

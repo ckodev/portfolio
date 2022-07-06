@@ -16,7 +16,7 @@ function Tools({tool}) {
     useEffect(() => {
         const changeAccentColor = () => {
             if (splitLocation[2] === '15') {
-                setActiveClass('flower-box')
+                setActiveClass('fdm')
             } else if (splitLocation[2] === '14') {
                 setActiveClass('portfolio')
             } else if (splitLocation[2] === '13') {

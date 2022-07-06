@@ -26,7 +26,7 @@ const handleProjectData = (newData) => {
   
 
   return (
-    <BrowserRouter >
+    <BrowserRouter basename="/">
         <div className='wrapper'>
             <Header />
             

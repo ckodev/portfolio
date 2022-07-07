@@ -47,6 +47,9 @@
         @include desktopQuery {
             margin-left: .5rem;
         }
+        p {
+            font-weight: bold;
+        }
         
 
         &:visited {
@@ -58,24 +61,42 @@
             @include desktopQuery {
                 border-radius: 10px;
                 
+                p {
+                    color: $MainAccentColor;
+                    font-weight: bold;
+                    transition: all .2s ease-in-out;
+                }
+                
 
                 &.fdm {
-                    background-color: $fdmAccentColor;
+                    p {
+                        color: $fdmAccentColor;
+                        font-weight: bold;
+                        transition: all .2s ease-in-out;
+                    }
                     
                 }
                 &.ghost-bomber {
-                    background-color: $GhostBomberAccentColor;
+                    p {
+                        color: $GhostBomberAccentColor;
+                        font-weight: bold;
+                        transition: all .2s ease-in-out;
+                    }
                 }
                 &.portfolio {
-                    background-color: $PortfolioAccentColor;
+                    
                     p {
                         color: $bodyBackground;
+                        font-weight: bold;
+                        transition: all .2s ease-in-out;
                     }
                 }
                 &.mustard {
-                    background-color: $MustardAccentColor;
+                    
                     p {
-                        color: $MustardAccentColor2;
+                        color: $MustardAccentColor;
+                        font-weight: bold;
+                        transition: all .2s ease-in-out;
                     }
                     
                 }

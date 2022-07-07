@@ -44,11 +44,10 @@ function Nav() {
         hiddenNav();
     }, [splitLocation])
 
+    
     const [windowSize, setWindowSize] = useState(window.innerWidth);
-
     useEffect(() => {
         function handleResize() {
-            console.log('resized to: ', window.innerWidth)
             setWindowSize(window.innerWidth);
         
         }

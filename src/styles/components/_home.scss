@@ -21,6 +21,7 @@
 
     p {
         margin-top: 6rem;
+        margin-left: .75rem;
         color: $black;
         transform: translateX(1000px);
         animation-name: from-far-right;
@@ -32,6 +33,7 @@
         animation-direction: normal;
 
         @include desktopQuery {
+            margin-left: .5rem;
             margin-top: 8rem;
         }
 

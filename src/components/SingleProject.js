@@ -66,33 +66,52 @@ function SingleProject() {
     const splitLocation = pathname.split("/");
     const [activeClass, setActiveClass] = useState('')
 
- 
-    useEffect(() => {
-        const changeAccentColor = () => {
-            if (splitLocation[2] === '15') {
-                setActiveClass('fdm')
-            } else if (splitLocation[2] === '14') {
-                setActiveClass('portfolio')
-            } else if (splitLocation[2] === '13') {
-                setActiveClass('ghost-bomber')
-            } else if (splitLocation[2] === '12') {
-                setActiveClass('mustard')
-            } else {
-                setActiveClass('')
-            }
-        }
-        changeAccentColor()
-    }, [splitLocation]) 
 
+    //     const [projectId, setProjectId] = useState('')
+    //     const [projectSlug, setProjectSlug] = useState('')
+    //     useEffect(() => {
+    //         setProjectId(restData.id)
+    //         setProjectSlug(restData.slug)
+    //     const changeAccentColor = () => {
+    //         if (parseInt(splitLocation[2]) === projectId) {
+    //             setActiveClass(projectSlug)
+    //         } else {
+    //             setActiveClass('')
+    //         }
+    //     }
+    //     changeAccentColor()
+    //      }, [splitLocation, projectId, projectSlug, restData.id, restData.slug]) 
+
+ 
+    //  The above commented out function ^^ is an attempt to accomplish the same task as below in a more dynamic fashion. It works but unfortunatley is noticably slower then the hardcoded version.   
+        useEffect(() => {
+            const changeAccentColor = () => {
+                if (splitLocation[2] === '15') {
+                    setActiveClass('fdm')
+                } else if (splitLocation[2] === '14') {
+                    setActiveClass('portfolio')
+                } else if (splitLocation[2] === '13') {
+                    setActiveClass('ghost-bomber')
+                } else if (splitLocation[2] === '12') {
+                    setActiveClass('mustard')
+                } else {
+                    setActiveClass('')
+                }
+            }
+            changeAccentColor()
+        }, [splitLocation]) 
+
+    // multi purpose scroll to top  
     function scrollToTop() {
         window.scrollTo({top:0, behavior:'smooth'} );
     }
   
+
+    // Accordion drop down functionality for project content.
     const [takeawayActive, setTakeawayActive] = useState('')
     const [highlightActive, sethighlightActive] = useState('')
     const [processActive, setProcessActive] = useState('')
     const [projectsActive, setProjectsActive] = useState('')
-  
 
     const toggleTabs = () => {
         toggleTakeaway();

@@ -45,9 +45,10 @@
         flex-direction: column;
         
         @include desktopQuery {
-            margin-left: .5rem;
+            
             p {
-                font-weight: 700;
+                font-weight: 500;
+                width: 7rem;
             }
         }
         

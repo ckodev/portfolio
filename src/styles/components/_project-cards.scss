@@ -26,11 +26,18 @@
             margin-left: 9rem;
         }
     }
+
+    .project-cards-container {
+        max-width: 60rem;
+        margin: auto;
+    }
 }
 
 .project-card {
     position: relative;
     padding: 0.6rem 1rem;
+
+    
     
     a {
         color: black;
@@ -41,13 +48,21 @@
         box-shadow: -.2px 1px 3px rgb(0, 0, 0, 0.5);
         text-decoration: none;
         color: $black;
+        transition: all .1s ease-in-out;
+
+        
 
         &:visited {
             color: $black;
         }
 
         @include desktopQuery {
-            height: 7.75rem;
+            height: 7.25rem;
+
+            &:hover {
+                box-shadow: 1px 1px 15px rgba(116, 116, 116, 0.35);
+                transform: scale(1.01);
+            }
         }
     }
 
@@ -61,7 +76,7 @@
         word-wrap: break-word;
 
         @include desktopQuery {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             padding: .5rem;
         }
     }
@@ -88,7 +103,8 @@
             border-radius: 3px; 
             
             @include desktopQuery {
-                max-width: 6.2rem;
+                max-width: 6rem;
+                bottom: 2px;
             }
             
         }

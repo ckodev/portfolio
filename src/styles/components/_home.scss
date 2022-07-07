@@ -20,7 +20,7 @@
     }
 
     p {
-        margin-top: 8rem;
+        margin-top: 6rem;
         color: $black;
         transform: translateX(1000px);
         animation-name: from-far-right;
@@ -30,6 +30,10 @@
         animation-iteration-count: 1;
         animation-delay: 1.5s;
         animation-direction: normal;
+
+        @include desktopQuery {
+            margin-top: 8rem;
+        }
 
     }
     
@@ -95,9 +99,9 @@
 
         @keyframes colorChange {
             0%   {fill:$MainAccentColor; }
-            34%  {fill:$fdmAccentColor; }
-            67%  {fill:$MustardAccentColor2; }
-            90%  {fill:$GhostBomberAccentColor; }
+            25%  {fill:$fdmAccentColor; }
+            50%  {fill:$MustardAccentColor2; }
+            75%  {fill:$GhostBomberAccentColor; }
             100% {fill:$MainAccentColor; }
             }
 

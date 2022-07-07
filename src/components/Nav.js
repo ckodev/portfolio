@@ -44,6 +44,19 @@ function Nav() {
         hiddenNav();
     }, [splitLocation])
 
+    const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+    useEffect(() => {
+        function handleResize() {
+            console.log('resized to: ', window.innerWidth)
+            setWindowSize(window.innerWidth);
+        
+        }
+        window.addEventListener('resize', handleResize)
+      });
+    
+      
+
     
   return (
     <div className={`main-nav-container ${navHidden}`}>
@@ -57,7 +70,7 @@ function Nav() {
                     </NavLink>
                 </li> */}
                 <li >
-                    <NavLink to="/PageAbout" >
+                    <NavLink className={windowSize > 899 ? activeClass : ""}   to="/PageAbout" >
                     <span className='menu-active'></span>
                         <AboutIcon/>
                         <p>About</p>
@@ -71,7 +84,7 @@ function Nav() {
                     </NavLink>
                 </li>
                 <li >
-                    <NavLink to="/PageContact" >
+                    <NavLink className={windowSize > 899 ? activeClass : ""} to="/PageContact" >
                     <span className='menu-active'></span>
                         <ContactIcon/>
                         <p>Contact</p>

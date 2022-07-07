@@ -1,4 +1,5 @@
 @use '../base/variables' as *;
+
 .main-nav-container {
     max-width: 70rem;
     display: flex;
@@ -43,10 +44,45 @@
         display: flex;
         flex-direction: column;
         
+        @include desktopQuery {
+            margin-left: .5rem;
+        }
         
 
         &:visited {
             color: $black;
+        }
+
+        &:hover {
+
+            @include desktopQuery {
+                border-radius: 10px;
+                
+
+                &.fdm {
+                    background-color: $fdmAccentColor;
+                    
+                }
+                &.ghost-bomber {
+                    background-color: $GhostBomberAccentColor;
+                }
+                &.portfolio {
+                    background-color: $PortfolioAccentColor;
+                    p {
+                        color: $bodyBackground;
+                    }
+                }
+                &.mustard {
+                    background-color: $MustardAccentColor;
+                    p {
+                        color: $MustardAccentColor2;
+                    }
+                    
+                }
+    
+            }
+
+            
         }
 
         &.active {
@@ -71,6 +107,8 @@
                 fill: $MustardAccentColor;
             }
         }
+
+
         
         .menu-active {
             background-color: $bodyBackground;

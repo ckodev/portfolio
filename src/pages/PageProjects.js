@@ -41,8 +41,10 @@ function PageProjects({handleProjectData}) {
         { isLoaded ?
           <div className='entry-content projects'>
             <section className='project-cards' id='project-cards' onLoad={sendProjectData}>
-                <h2 className='featured-project'>Featured Projects</h2>
-                {restData.map(project=> <ProjectCard key={project.id} project={project}/>)}
+            <h2 className='featured-project'>Featured Projects</h2>
+                <div className="project-cards-container">
+                  {restData.map(project=> <ProjectCard key={project.id} project={project}/>)}
+                </div>
             </section>
             <Footer/>
           </div>

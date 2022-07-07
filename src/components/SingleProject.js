@@ -104,6 +104,7 @@ function SingleProject() {
     // multi purpose scroll to top  
     function scrollToTop() {
         window.scrollTo({top:0, behavior:'smooth'} );
+        setTimeout(toggleTabs, 1000);
     }
   
 
@@ -118,6 +119,7 @@ function SingleProject() {
         toggleHighlight();
         toggleProcess();
         toggleProjects();
+        
     }
 
     const toggleTakeaway = () => {
@@ -259,9 +261,9 @@ function SingleProject() {
 
                     <div className={`accordion-content ${projectsActive}`}>
                             {/* slider section - links to my other projects */}
-                        <div className="slider-container">
+                        <div className="slider-container" onClick={scrollToTop}>
                             <h2>More Projects</h2>
-                            <SliderGallery toggleTabs={toggleTabs} projectData={restData2} />
+                            <SliderGallery  projectData={restData2} />
                         </div>
                     </div>
                 

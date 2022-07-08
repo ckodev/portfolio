@@ -1,4 +1,5 @@
 @use '../base/variables' as *;
+
 .main-nav-container {
     max-width: 70rem;
     display: flex;
@@ -35,6 +36,17 @@
             justify-content: flex-end;
             max-width: $MaxWidth;
             margin: auto;
+
+            // :nth-child(1) a p {
+            //     &:hover {
+            //         color: $fdmAccentColor;
+            //     }
+            // }
+            // :nth-child(3) a p {
+            //     &:hover {
+            //         color: $GhostBomberAccentColor;
+            //     }
+            // }
         }
     }
 
@@ -43,10 +55,72 @@
         display: flex;
         flex-direction: column;
         
+        @include desktopQuery {
+            
+            p {
+                width: 7rem;
+                font-size: 1rem;
+                padding: 1rem;
+                text-align: center;
+                font-weight: 500;
+                width: 7rem;
+            }
+        }
+        
         
 
         &:visited {
             color: $black;
+        }
+
+        &:hover {
+
+            @include desktopQuery {
+                border-radius: 10px;
+                
+                p {
+                    color: $MainAccentColor;
+                    font-weight: 700;
+                    transition: all .2s ease-in-out;
+                }
+                
+
+                &.fdm {
+                    p {
+                        color: $fdmAccentColor;
+                        font-weight: 700;
+                        transition: all .2s ease-in-out;
+                    }
+                    
+                }
+                &.ghost-bomber {
+                    p {
+                        color: $GhostBomberAccentColor;
+                        font-weight: 700;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+                &.portfolio {
+                    
+                    p {
+                        color: $MainAccentColor;
+                        font-weight: 700;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+                &.mustard {
+                    
+                    p {
+                        color: $MustardAccentColor;
+                        font-weight: 700;
+                        transition: all .2s ease-in-out;
+                    }
+                    
+                }
+    
+            }
+
+            
         }
 
         &.active {
@@ -57,8 +131,8 @@
                 fill: $MainAccentColor; 
             }
 
-            &.flower-box path {
-                fill: $FlowerBoxAccentColor;
+            &.fdm path {
+                fill: $fdmAccentColor;
                 
             }
             &.ghost-bomber path {
@@ -71,6 +145,8 @@
                 fill: $MustardAccentColor;
             }
         }
+
+
         
         .menu-active {
             background-color: $bodyBackground;
@@ -102,8 +178,8 @@
                 }
             }
 
-            &.flower-box .menu-active {
-                background-color: $FlowerBoxAccentColor;
+            &.fdm .menu-active {
+                background-color: $fdmAccentColor;
                 animation: createBox .5s cubic-bezier(0.67, 0.21, 0.54, 1.31);
                 transition: .25s ease-in-out;
 

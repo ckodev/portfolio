@@ -1,0 +1,48 @@
+@use '../base/variables' as *;
+
+
+.accordion-section {
+
+    .accordion-title {
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        display: flex;
+        max-width: 40rem;
+        background: none;
+        border: none;
+        margin: auto;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid black;
+        padding-bottom: 1rem;
+        color: black;
+        cursor: pointer;
+
+        &.active {
+
+            svg {
+                transition: transform .6s ease-in-out;
+                transform: rotate(180deg);
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+
+    .accordion-content {
+        overflow: hidden;
+        transition: all .75s ease;
+        max-height: 0;
+        
+
+        &.active {
+            max-height: 1800px;
+            margin-bottom: 3rem;
+        }
+
+       
+    }
+}

@@ -24,14 +24,6 @@
     }
 
     
-    // @include desktopQuery {
-    //     .hl .project-highlights:nth-of-type(even) .highlight-container {
-    //         display: flex;
-    //         flex-direction: row-reverse;
-    //     }
-    // }
-
-    
 
 
 
@@ -51,23 +43,45 @@
 
             @include desktopQuery {
                 padding: 1rem 3rem;
-                max-width: 40rem;
+                max-width: 36rem;
+            }
+
+            h3 {
+                padding: 1rem 0;
             }
         }
 
-        img {
+        video {
+            display: block;
             width: 36rem;
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: $ButtonAndIconShadow;
+            margin: auto;
+
            
 
             @include desktopQuery {
-                width: 25rem;
+                width: 28rem;
+                max-height: fit-content;
                 margin: auto;
                 margin-left: 2rem;
             }
         }
     }
+
+
+    .development-container {
+        padding: 0rem 1rem;
+        margin: auto;
+        max-width: 37rem;
+
+        @include desktopQuery {
+            padding: 0rem 3rem;
+            max-width: 40rem;
+        }
+    }
+
+    
 
     
 }

@@ -1,0 +1,38 @@
+@use '../base/variables' as *;
+
+.footer-container {
+    margin: auto;
+    display: flex;
+    text-align: center;
+    color: black;
+    padding: 2rem;
+
+    p {
+        font-size: .9rem;
+        text-decoration: none;
+        color: $black;
+        align-self: center;
+        
+        &:visited {
+            color: $black;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        width: 2rem;
+        margin-left: .5rem;
+        color: $black;
+        
+        &:visited {
+            color: $black;
+        }
+
+        svg {
+            height: fit-content;
+            width: 2rem;
+        }
+    }
+
+    
+}

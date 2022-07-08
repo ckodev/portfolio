@@ -1,14 +1,16 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
-import { FaEnvelope, FaCopy, FaWaveSquare } from 'react-icons/fa';
+import { FaWaveSquare, FaCopy, FaEnvelope } from 'react-icons/fa';
+import Footer from '../components/Footer';
+
 
 function PageContact() {
 
 
     const [isLoaded, setLoaded] = useState(false)
     
-    const restPath = 'http://ckodev.com/ckodev/wp-json/wp/v2/pages/102?_embed';
+    const restPath = 'https://ckodev.com/ckodev/wp-json/wp/v2/pages/102?_embed';
     const [restData, setData] = useState([])
   
     
@@ -80,8 +82,8 @@ function PageContact() {
                   <a href={`mailto:${restData.acf.email}?subject=The%20Matrix%20was%20a%20documentary&body=I%20look%20forward%20to%20hearing%20from%20you!`}><button><p className='button-text'>Open email client</p><FaEnvelope/></button></a>
                 </div>
                
-               
               </section>
+              <Footer/>
            </div>
         : 
           <Loading />

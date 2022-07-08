@@ -35,27 +35,30 @@ header {
     }
 
     #cko {
-        text-shadow: 0px 0.2px 1px rgb(0 0 0 / 39%);
+        text-shadow: 0px 0.1px 1px rgb(0 0 0 / 39%);
         transition: .5s ease-in-out;
     }
 
-    .active.flower-box {
+    .active.fdm {
         
         #cko {
             
-            fill: $FlowerBoxAccentColor;
+            fill: $fdmAccentColor;
+            text-shadow: none;
         }
     }
     .active.ghost-bomber {
 
         #cko {
             fill: $GhostBomberAccentColor;
+            text-shadow: none;
         }
     }
     .active.portfolio {
 
         #cko {
             fill: $PortfolioAccentColor;
+            text-shadow: none;
         }
     }
     .active.mustard {

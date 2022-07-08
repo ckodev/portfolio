@@ -14,13 +14,13 @@ function Header() {
     const [activeClass, setActiveClass] = useState('')
     const [headerClass, setheaderClass] = useState('')
 
-    console.log(splitLocation)
+
 
     useEffect(() => {
 
         const changeAccentColor = () => {
             if (splitLocation[2] === '15') {
-                setActiveClass('active flower-box')
+                setActiveClass('active fdm')
             } else if (splitLocation[2] === '14') {
                 setActiveClass('active portfolio')
             } else if (splitLocation[2] === '13') {
@@ -51,7 +51,7 @@ function Header() {
     <header className={headerClass}>
         <div className="header-content-container">
           <h1 className='sr-only'>ckodev</h1>
-          <Link to="/" spy={true} smooth={true}  duration={700} offset={-100}><HomeLogo className={activeClass} /></Link>
+          <Link to="/" ><HomeLogo className={activeClass} /></Link>
         </div>
 
         <Nav />

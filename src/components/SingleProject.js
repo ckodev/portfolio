@@ -7,11 +7,8 @@ import Tools from './Tools'
 import SliderGallery from './SliderGallery'
 import { useLocation } from "react-router-dom"
 import {NavLink} from 'react-router-dom'
-import TabsUnstyled from '@mui/base/TabsUnstyled';
-import TabsListUnstyled from '@mui/base/TabsListUnstyled';
-import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
-import TabUnstyled from '@mui/base/TabUnstyled';
-// import {Link} from 'react-scroll'
+import {FaChevronDown} from 'react-icons/fa';
+import Footer from './Footer'
 
 
 
@@ -70,45 +67,85 @@ function SingleProject() {
     const [activeClass, setActiveClass] = useState('')
 
 
-
-//     const [projectId, setProjectId] = useState('')
-//     const [projectSlug, setProjectSlug] = useState('')
-//     useEffect(() => {
-//         setProjectId(restData.id)
-//         setProjectSlug(restData.slug)
-//     const changeAccentColor = () => {
-       
-//         if (parseInt(splitLocation[2]) === projectId) {
-//             setActiveClass(projectSlug)
-//         } else {
-//             setActiveClass('')
-//         }
-//     }
-//     changeAccentColor()
-// }, [splitLocation, projectId, projectSlug, restData.id, restData.slug]) 
+    //     const [projectId, setProjectId] = useState('')
+    //     const [projectSlug, setProjectSlug] = useState('')
+    //     useEffect(() => {
+    //         setProjectId(restData.id)
+    //         setProjectSlug(restData.slug)
+    //     const changeAccentColor = () => {
+    //         if (parseInt(splitLocation[2]) === projectId) {
+    //             setActiveClass(projectSlug)
+    //         } else {
+    //             setActiveClass('')
+    //         }
+    //     }
+    //     changeAccentColor()
+    //      }, [splitLocation, projectId, projectSlug, restData.id, restData.slug]) 
 
  
-    useEffect(() => {
-        const changeAccentColor = () => {
-            if (splitLocation[2] === '15') {
-                setActiveClass('flower-box')
-            } else if (splitLocation[2] === '14') {
-                setActiveClass('portfolio')
-            } else if (splitLocation[2] === '13') {
-                setActiveClass('ghost-bomber')
-            } else if (splitLocation[2] === '12') {
-                setActiveClass('mustard')
-            } else {
-                setActiveClass('')
+    //  The above commented out function ^^ is an attempt to accomplish the same task as below in a more dynamic fashion. It works but unfortunatley is noticably slower then the hardcoded version.   
+        useEffect(() => {
+            const changeAccentColor = () => {
+                if (splitLocation[2] === '15') {
+                    setActiveClass('fdm')
+                } else if (splitLocation[2] === '14') {
+                    setActiveClass('portfolio')
+                } else if (splitLocation[2] === '13') {
+                    setActiveClass('ghost-bomber')
+                } else if (splitLocation[2] === '12') {
+                    setActiveClass('mustard')
+                } else {
+                    setActiveClass('')
+                }
             }
-        }
-        changeAccentColor()
-    }, [splitLocation]) 
+            changeAccentColor()
+        }, [splitLocation]) 
 
+    // multi purpose scroll to top  
     function scrollToTop() {
         window.scrollTo({top:0, behavior:'smooth'} );
+        setTimeout(toggleTabs, 1000);
     }
   
+
+    // Accordion drop down functionality for project content.
+    const [takeawayActive, setTakeawayActive] = useState('')
+    const [highlightActive, sethighlightActive] = useState('')
+    const [processActive, setProcessActive] = useState('')
+    const [projectsActive, setProjectsActive] = useState('')
+
+    const toggleTabs = () => {
+        toggleTakeaway();
+        toggleHighlight();
+        toggleProcess();
+        toggleProjects();
+        
+    }
+
+    const toggleTakeaway = () => {
+        setTakeawayActive(takeawayActive === "" ? "active" : "")
+        sethighlightActive("")
+        setProcessActive("")
+        setProjectsActive("")
+    }
+    const toggleHighlight = () => {
+        setTakeawayActive("")
+        sethighlightActive(highlightActive === "" ? "active" : "")
+        setProcessActive("")
+        setProjectsActive("")
+    }
+    const toggleProcess = () => {
+        setTakeawayActive("")
+        sethighlightActive("")
+        setProcessActive(processActive === "" ? "active" : "")
+        setProjectsActive("")
+    }
+    const toggleProjects = () => {
+        setTakeawayActive("")
+        sethighlightActive("")
+        setProcessActive("")
+        setProjectsActive(projectsActive === "" ? "active" : "")
+    }
 
 
   return (
@@ -140,13 +177,14 @@ function SingleProject() {
                 {/* tools used */}
                 <div className='tool-tile-container' id="tab-content">
                     <h2 className='sr-only'>Development Tools</h2>
-                    {restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}
+                    {restData.acf.tools.map((tool, i) => <Tools key={i} tool={tool}/>)}
                 </div>
 
                 {/* Links to Live site & git hub */}
                 <div className="link-container" id="tab-content">
                     <a className={activeClass} href={restData.acf.live_site.url} target="_blank" rel="noreferrer" >{restData.acf.live_site.title}</a>
-                    <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>
+                    {splitLocation[2] === '15' ? <></> :  <a className={activeClass} href={restData.acf.git_hub.url} target="_blank" rel="noreferrer" >{restData.acf.git_hub.title}</a>}
+                   
                 </div>
 
             </section>
@@ -154,59 +192,89 @@ function SingleProject() {
            
 
 
-            <div className="project-info-container">
+        <div className="project-info-container">
                 
+            <div className='content-under-tabs'>
 
+                <div className={`accordion-section`}>
 
-                <TabsUnstyled defaultValue={0} className='content-under-tabs'>
-                    <TabsListUnstyled className={`Tabs ${activeClass}`}>
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`} >
-                            {restData.acf.reflection_heading}
-                        </TabUnstyled>
+                    <button  className={`accordion-title ${takeawayActive}`} onClick={toggleTakeaway}>
+                        <p>{restData.acf.reflection_heading}</p>
+                        <FaChevronDown/>
+                    </button>
 
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
-                            {restData.acf.project_highlights_heading}
-                        </TabUnstyled>
-
-                        <TabUnstyled className={`Tabs__tab ${activeClass} Tab`}>
-                            {restData.acf.development_heading}
-                        </TabUnstyled>
-                        
-                        <span className={`Tabs__presentation-slider ${activeClass}`} role='presentation'></span>
-                    </TabsListUnstyled>
-
-                        <TabPanelUnstyled value={0}>
+                   
+                    <div className={`accordion-content ${takeawayActive}`}>
                             {/* take aways Section */}
-                            <section className="take-aways" >
-                                    <h2>{restData.acf.reflection_heading}</h2>
-                                    <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p>
-                            </section>
-                        </TabPanelUnstyled>
-                        <TabPanelUnstyled value={1}>
+                            <section className={`take-aways`} >
+                                <h2>{restData.acf.reflection_heading}</h2>
+                                {/* <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p> */}
+                                <div className='display-linebreak text-content' dangerouslySetInnerHTML={{__html:  restData.acf.project_reflection}}></div>
+                        </section>
+                    </div>
+                    
+
+                </div>
+                <div className={`accordion-section`}>
+
+                    <button className={`accordion-title ${highlightActive}`} onClick={toggleHighlight}>
+                        <p>{restData.acf.project_highlights_heading}</p>
+                        <FaChevronDown/>
+                    </button>
+
+                   
+                    <div className={`accordion-content ${highlightActive}`}>
                             {/* Project Highlights */}
-                            <section className="highlights-container">
-                                <h2>{restData.acf.project_highlights_heading}</h2>
-                                <div className='hl'>{restData.acf.project_highlights.map(highlight => <ProjectHighlights key={highlight.id} highlight={highlight}/>)}</div>
-                            </section>
-                        </TabPanelUnstyled>
-                        <TabPanelUnstyled value={2}>
+                            <section className={`highlights-container`}>
+                            <h2>{restData.acf.project_highlights_heading}</h2>
+                            <div className='hl'>{restData.acf.project_highlights.map((highlight, i) => <ProjectHighlights param={id} key={i} highlight={highlight}/>)}</div>
+                        </section>
+                    </div>
+                    
+
+                </div>
+                <div className={`accordion-section `}>
+
+                    <button className={`accordion-title ${processActive}`} onClick={toggleProcess}>
+                        <p>{restData.acf.development_heading}</p>
+                        <FaChevronDown/>
+                    </button>
+
+                   
+                    <div className={`accordion-content ${processActive}`}>
                             {/* develoarticle */}
-                            <section className="development-container" >
-                                <h2>{restData.acf.development_heading}</h2>
-                                <p className='display-linebreak text-content'>{restData.acf.development}</p>
-                            </section>
-                        </TabPanelUnstyled>
-                </TabsUnstyled>
+                        <section className={`development-container`} >
+                            <h2>{restData.acf.development_heading}</h2>
+                            {/* <p className='display-linebreak text-content'>{restData.acf.development}</p> */}
+                            <div className='display-linebreak text-content' dangerouslySetInnerHTML={{__html:  restData.acf.development}}></div>
+                        </section>
+                    </div>
+                 
+                </div>
+
+                <div className={`accordion-section `}>
+
+                    <button className={`accordion-title ${projectsActive}`} onClick={toggleProjects}>
+                        <p>{restData.acf.more_projects}</p>
+                        <FaChevronDown/>
+                    </button>
+
+                    <div className={`accordion-content ${projectsActive}`}>
+                            {/* slider section - links to my other projects */}
+                        <div className="slider-container" onClick={scrollToTop}>
+                            <h2>More Projects</h2>
+                            <SliderGallery  projectData={restData2} />
+                        </div>
+                    </div>
+                
+                </div>
+  
+        
             </div>
-
-
-
-            
-
-            {/* slider section - links to my other projects */}
-            <SliderGallery projectData={restData2} />
-
+        </div>
         </article>
+
+        <Footer/>
         
         
     </div>

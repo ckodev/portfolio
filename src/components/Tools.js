@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react'
 
 
 
-function Tools({tool}) {
+function Tools({tool, i}) {
 
 
     const location = useLocation();
@@ -16,7 +16,7 @@ function Tools({tool}) {
     useEffect(() => {
         const changeAccentColor = () => {
             if (splitLocation[2] === '15') {
-                setActiveClass('flower-box')
+                setActiveClass('fdm')
             } else if (splitLocation[2] === '14') {
                 setActiveClass('portfolio')
             } else if (splitLocation[2] === '13') {
@@ -34,7 +34,7 @@ function Tools({tool}) {
   return (
    
 
-    <div className='tool-tile'>
+    <div key={i} className='tool-tile'>
         <div className={activeClass} dangerouslySetInnerHTML={{__html: tool.svg_text}}></div>
         <h3>{tool.tool_title}</h3> 
     </div>

@@ -59,7 +59,7 @@
 
     .text-content {
         line-height: 1.6;
-        font-size: .96rem;
+        font-size: 1rem;
     }
 
     .h2-container-1 {
@@ -88,6 +88,8 @@
 
     .contact-message-container {
         padding-top: .1rem;
+        max-width: 60rem;
+        margin: auto;
 
         .content-right-container {
 
@@ -146,6 +148,13 @@
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
+
+        @include tabletQuery {
+            margin-top: 3rem;
+        }
+        @include desktopQuery {
+            margin-top: 3.5rem;
+        }
 
         button {
             justify-content: space-between;

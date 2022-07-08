@@ -79,7 +79,7 @@ function Nav() {
                     <NavLink className={activeClass} to="/PageProjects" >
                     <span className='menu-active'></span>
                         <ProjectsIcon/>
-                        <p>Projects</p>
+                        <p>Works</p>
                     </NavLink>
                 </li>
                 <li >

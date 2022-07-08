@@ -14,12 +14,16 @@
     align-items: center;
     width: 100%;
 
+    
+
     @keyframes from-far-right{
         0% { transform: translateX(1000);}
         100% { transform: translateX(0);}
     }
 
-    p {
+    button {
+        border: none;
+        background: none;
         margin-top: 6rem;
         margin-left: .75rem;
         color: $black;

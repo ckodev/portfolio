@@ -37,9 +37,8 @@ function PageHome() {
                 <Dot/>
                 <EyeBrowLeft/>
                 <EyeBrowRight/>
-                {windowSize > 899 ? <p>click anywhere...</p> : <p>tap anywhere...</p>  }
+                {windowSize > 899 ? <button>click anywhere...</button> : <button>tap anywhere...</button>  }
                 
-              
             </div>
       </Link>
     </>

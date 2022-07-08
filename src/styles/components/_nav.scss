@@ -36,6 +36,17 @@
             justify-content: flex-end;
             max-width: $MaxWidth;
             margin: auto;
+
+            // :nth-child(1) a p {
+            //     &:hover {
+            //         color: $fdmAccentColor;
+            //     }
+            // }
+            // :nth-child(3) a p {
+            //     &:hover {
+            //         color: $GhostBomberAccentColor;
+            //     }
+            // }
         }
     }
 

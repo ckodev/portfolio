@@ -177,7 +177,7 @@ function SingleProject() {
                 {/* tools used */}
                 <div className='tool-tile-container' id="tab-content">
                     <h2 className='sr-only'>Development Tools</h2>
-                    {restData.acf.tools.map(tool => <Tools key={tool.id} tool={tool}/>)}
+                    {restData.acf.tools.map((tool, i) => <Tools key={i} tool={tool}/>)}
                 </div>
 
                 {/* Links to Live site & git hub */}
@@ -227,7 +227,7 @@ function SingleProject() {
                             {/* Project Highlights */}
                             <section className={`highlights-container`}>
                             <h2>{restData.acf.project_highlights_heading}</h2>
-                            <div className='hl'>{restData.acf.project_highlights.map(highlight => <ProjectHighlights param={id} key={highlight.highlight_video.url} highlight={highlight}/>)}</div>
+                            <div className='hl'>{restData.acf.project_highlights.map((highlight, i) => <ProjectHighlights param={id} key={i} highlight={highlight}/>)}</div>
                         </section>
                     </div>
                     

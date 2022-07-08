@@ -12,8 +12,8 @@ function SliderGallery({projectData}) {
         
         {projectData.map((slide, index) => {
           return(
-            <Link to={`/SingleProject/${slide.id}`}>
-              <img key={index}  src={slide.acf.project_card_thumbnail.url} alt={slide.acf.project_card_thumbnail.alt} />
+            <Link key={index} to={`/SingleProject/${slide.id}`}>
+              <img   src={slide.acf.project_card_thumbnail.url} alt={slide.acf.project_card_thumbnail.alt} />
               <p>{slide.title.rendered}</p>
             </Link>
           )

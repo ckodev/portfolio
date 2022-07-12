@@ -112,7 +112,7 @@ function SingleProject() {
     const [takeawayActive, setTakeawayActive] = useState('')
     const [highlightActive, sethighlightActive] = useState('')
     const [processActive, setProcessActive] = useState('')
-    const [projectsActive, setProjectsActive] = useState('')
+
 
     const toggleTabs = () => {
         toggleTakeaway();

@@ -61,13 +61,6 @@ function Nav() {
     <div className={`main-nav-container ${navHidden}`}>
         <nav className='main-nav'>
             <ul>
-                {/* <li >
-                    <NavLink smooth to="/" >
-                    <span className='menu-active'></span>
-                        <HomeIcon/>
-                        <p>Home</p>
-                    </NavLink>
-                </li> */}
                 <li >
                     <NavLink className={windowSize > 899 ? activeClass : ""}   to="/PageAbout" >
                     <span className='menu-active'></span>

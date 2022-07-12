@@ -82,8 +82,8 @@ function SingleProject() {
     //     changeAccentColor()
     //      }, [splitLocation, projectId, projectSlug, restData.id, restData.slug]) 
 
- 
-    //  The above commented out function ^^ is an attempt to accomplish the same task as below in a more dynamic fashion. It works but unfortunatley is noticably slower then the hardcoded version.   
+    //  The above commented out function ^^ is an attempt to accomplish the same task as below in a more dynamic fashion. It works but unfortunatley is noticably slower then the hardcoded version.  
+     
         useEffect(() => {
             const changeAccentColor = () => {
                 if (splitLocation[2] === '15') {
@@ -208,7 +208,7 @@ function SingleProject() {
                             {/* take aways Section */}
                             <section className={`take-aways`} >
                                 <h2>{restData.acf.reflection_heading}</h2>
-                                {/* <p className='display-linebreak text-content'>{restData.acf.project_reflection}</p> */}
+                     
                                 <div className='display-linebreak text-content' dangerouslySetInnerHTML={{__html:  restData.acf.project_reflection}}></div>
                         </section>
                     </div>
@@ -245,7 +245,7 @@ function SingleProject() {
                             {/* develoarticle */}
                         <section className={`development-container`} >
                             <h2>{restData.acf.development_heading}</h2>
-                            {/* <p className='display-linebreak text-content'>{restData.acf.development}</p> */}
+                     
                             <div className='display-linebreak text-content' dangerouslySetInnerHTML={{__html:  restData.acf.development}}></div>
                         </section>
                     </div>

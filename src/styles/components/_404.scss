@@ -1,20 +1,27 @@
 @use '../base/variables' as *;
 
-
-.loading-container {
+.error-page {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
     right: 0;
+    left: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
 
+    @include tabletQuery {
+        flex-direction: row;
+    }
+
+
     svg {
-        width: 3.5rem;
+        width: 2rem;
         height: auto;
+        margin-left: 1rem;
+        margin-top: 0.5rem;
 
         @keyframes loadColorChange {
             0%   {fill:$MainAccentColor; }
@@ -37,6 +44,4 @@
 
         }
     }
-    
 }
-

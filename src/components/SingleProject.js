@@ -126,19 +126,19 @@ function SingleProject() {
         setTakeawayActive(takeawayActive === "" ? "active" : "")
         sethighlightActive("")
         setProcessActive("")
-        setProjectsActive("")
+        
     }
     const toggleHighlight = () => {
         setTakeawayActive("")
         sethighlightActive(highlightActive === "" ? "active" : "")
         setProcessActive("")
-        setProjectsActive("")
+        
     }
     const toggleProcess = () => {
         setTakeawayActive("")
         sethighlightActive("")
         setProcessActive(processActive === "" ? "active" : "")
-        setProjectsActive("")
+        
     }
   
 

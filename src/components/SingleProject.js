@@ -118,7 +118,7 @@ function SingleProject() {
         toggleTakeaway();
         toggleHighlight();
         toggleProcess();
-        toggleProjects();
+    
         
     }
 
@@ -140,12 +140,7 @@ function SingleProject() {
         setProcessActive(processActive === "" ? "active" : "")
         setProjectsActive("")
     }
-    const toggleProjects = () => {
-        setTakeawayActive("")
-        sethighlightActive("")
-        setProcessActive("")
-        setProjectsActive(projectsActive === "" ? "active" : "")
-    }
+  
 
 
   return (
@@ -252,22 +247,11 @@ function SingleProject() {
                  
                 </div>
 
-                <div className={`accordion-section `}>
-
-                    <button className={`accordion-title ${projectsActive}`} onClick={toggleProjects}>
-                        <p>{restData.acf.more_projects}</p>
-                        <FaChevronDown/>
-                    </button>
-
-                    <div className={`accordion-content ${projectsActive}`}>
-                            {/* slider section - links to my other projects */}
-                        <div className="slider-container" onClick={scrollToTop}>
-                            <h2>More Projects</h2>
-                            <SliderGallery  projectData={restData2} />
-                        </div>
-                    </div>
-                
+                <div className="slider-container" onClick={scrollToTop}>
+                    <h2>More Projects</h2>
+                    <SliderGallery  projectData={restData2} />
                 </div>
+
   
         
             </div>

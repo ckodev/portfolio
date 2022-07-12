@@ -4,6 +4,10 @@
     padding: 1rem;
     max-width: $MaxWidth;
 
+    a {
+        color: $MainAccentColor;
+    }
+
     @include desktopQuery {
         margin-top: 5%;
     }

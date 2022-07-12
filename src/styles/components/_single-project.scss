@@ -3,6 +3,10 @@
 .single-project-container {
     padding: .5rem;
 
+    a {
+        color: $MainAccentColor;
+    }
+
     h1 {
         text-align: center;
     }

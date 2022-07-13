@@ -109,17 +109,15 @@ function SingleProject() {
   
 
     // Accordion drop down functionality for project content.
-    const [takeawayActive, setTakeawayActive] = useState('')
+    const [takeawayActive, setTakeawayActive] = useState('active')
     const [highlightActive, sethighlightActive] = useState('')
     const [processActive, setProcessActive] = useState('')
 
 
     const toggleTabs = () => {
-        toggleTakeaway();
-        toggleHighlight();
-        toggleProcess();
-    
-        
+        setTakeawayActive('active')
+        setProcessActive('')
+        sethighlightActive('')
     }
 
     const toggleTakeaway = () => {

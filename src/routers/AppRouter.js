@@ -7,6 +7,7 @@ import PageAbout from '../pages/PageAbout';
 import PageHome from '../pages/PageHome';
 import PageProjects from '../pages/PageProjects';
 import PageContact from '../pages/PageContact';
+import PageResume from '../pages/PageResume';
 import {useState} from 'react'
 import Page404 from '../components/Page404'
 
@@ -35,6 +36,7 @@ const handleProjectData = (newData) => {
                 <Route path='/PageProjects' element={<PageProjects handleProjectData={handleProjectData}/>}/>
                 <Route path='/SingleProject/:id' element={<SingleProject projectData={projectData} />}/>
                 <Route path='/PageContact' element={<PageContact  />}/>
+                <Route path='/PageResume' element={<PageResume  />}/>
                 <Route path='*' element={<Page404 />}/>
             </Routes>
             

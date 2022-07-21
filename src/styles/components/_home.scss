@@ -30,10 +30,10 @@
         transform: translateX(1000px);
         animation-name: from-far-right;
         animation-fill-mode: forwards;
-        animation-duration: 1.1s;
+        animation-duration: 1.4s;
         animation-timing-function: cubic-bezier(0.79, 0.01, 0.44, 1.09);
         animation-iteration-count: 1;
-        animation-delay: 1.5s;
+        animation-delay: 1s;
         animation-direction: normal;
 
         @include desktopQuery {
@@ -46,14 +46,14 @@
 
 
     @keyframes from-bottom-left{
-        0% { transform: translate(-89px, 151px);}
+        0% { transform: translate(-89px, 1000px);}
         100% { transform: translate(0,0);}
     }
     .mustache-left {
         position: absolute;
         width: 15rem;
         animation-name: from-bottom-left;
-        animation-duration: 1.5s;
+        animation-duration: 1.9s;
         animation-timing-function: cubic-bezier(0.79, 0.01, 0.44, 1.09);
         animation-iteration-count: 1;
         animation-delay: 0s;
@@ -65,14 +65,14 @@
     }
 
     @keyframes from-bottom-right{
-        0% { transform: translate(111px, 148px);}
+        0% { transform: translate(111px, 1000px);}
         100% { transform: translate(0,0);}
     }
     .mustache-right {
         position: absolute;
         width: 15rem;
         animation-name: from-bottom-right;
-        animation-duration: 1.3s;
+        animation-duration: 2s;
         animation-timing-function: cubic-bezier(0.79, 0.01, 0.44, 1.09);
         animation-iteration-count: 1;
         animation-delay: 0s;
@@ -83,14 +83,14 @@
     }
 
     @keyframes from-left {
-        0% { transform: translateX(-300px);}
+        0% { transform: translateX(-1000px);}
         100% { transform: translateX(0);}
     }
 
    
     .cko {
         position: absolute;
-        transform: translateX(-300px);
+        transform: translateX(-1000px);
         width: 15rem;
         animation-name: from-left;
         animation-fill-mode: forwards;
@@ -126,7 +126,7 @@
     }
 
     @keyframes from-right {
-        0% { transform: translateX(300px);}
+        0% { transform: translateX(1000px);}
         100% { transform: translateX(0);}
     }
     .dev {
@@ -151,7 +151,7 @@
         position: absolute;
         width: 15rem;
         animation-name: from-center;
-        animation-duration: 1.7s;
+        animation-duration: 1.2s;
         animation-timing-function: cubic-bezier(1, 0.02, 0.83, 1.11);
         animation-iteration-count: 1;
         animation-delay: 0s;
@@ -162,14 +162,14 @@
     }
 
     @keyframes from-top-left {
-        0% { transform: translate(187px, -222px);}
+        0% { transform: translate(187px, -1000px);}
         100% { transform: translate(0);}
     }
     .eyebrow-left {
         position: absolute;
         width: 15rem;
         animation-name: from-top-left;
-        animation-duration: 1.5s;
+        animation-duration: 1.9s;
         animation-timing-function: cubic-bezier(0.79, 0.01, 0.44, 1.09);
         animation-iteration-count: 1;
         animation-delay: 0s;
@@ -180,14 +180,14 @@
     }
 
     @keyframes from-top-right {
-        0% { transform: translate(-193px, -216px);}
+        0% { transform: translate(-193px, -1000px);}
         100% { transform: translate(0);}
     }
     .eyebrow-right {
         position: absolute;
         width: 15rem;
         animation-name: from-top-right;
-        animation-duration: 2s;
+        animation-duration: 1.8s;
         animation-timing-function: cubic-bezier(0.79, 0.01, 0.44, 1.09);
         animation-iteration-count: 1;
         animation-delay: 0s;

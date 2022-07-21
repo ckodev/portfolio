@@ -12,9 +12,25 @@
     align-items: center;
     width: 100%;
 
+    @keyframes throb {
+        0% {transform: scale(.75);}
+        25% {transform: scale(.85);}
+        50% {transform: scale(.95);}
+        75% {transform: scale(.85);}
+        100% {transform: scale(.75);}
+    }
+
     svg {
         width: 3.5rem;
         height: auto;
+        animation-name: throb;
+        animation-fill-mode: forwards;
+        animation-duration: 1.75s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 0s;
+        animation-direction: normal;
+
 
         @keyframes loadColorChange {
             0%   {fill:$MainAccentColor; }
@@ -25,17 +41,19 @@
             }
 
         path {
-            
+            fill: $black;
             stroke-width: 0px;
-            animation-name: colorChange;
-            animation-fill-mode: forwards;
-            animation-duration: 2s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            animation-delay: 0s;
-            animation-direction: normal;
+            // animation-name: colorChange;
+            // animation-fill-mode: forwards;
+            // animation-duration: 2s;
+            // animation-timing-function: linear;
+            // animation-iteration-count: infinite;
+            // animation-delay: 0s;
+            // animation-direction: normal;
 
         }
+
+       
     }
     
 }

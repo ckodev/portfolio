@@ -46,7 +46,7 @@ function PageAbout() {
                   </div>
                   <div className='display-linebreak text-content' dangerouslySetInnerHTML={{__html:  restData.acf.about_me_wysi}}></div>
                   <p className='location'>Location: {restData.acf.location}</p>
-                  <img src={restData._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url} alt="" />
+                  <img src={restData._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url} alt={restData._embedded['wp:featuredmedia'][0].alt_text} />
                 </div>
             </section>
             <Footer/>

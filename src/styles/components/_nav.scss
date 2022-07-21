@@ -67,21 +67,19 @@
             @include desktopQuery {
                 border-radius: 10px;
 
-                @keyframes navHoverColorChange {
-                    0%   {color:$MainAccentColor; }
-                    25%  {color:$fdmAccentColor; }
-                    50%  {color:$MustardAccentColor2; }
-                    75%  {color:$GhostBomberAccentColor; }
-                    100% {color:$MainAccentColor; }
+                @keyframes navHoverChange {
+                    0% {transform: scale(1);}
+                    100% {transform: scale(1.1);}
+                    
                     }
                 
                 p {
                    
-                    animation-name: navHoverColorChange;
+                    animation-name: navHoverChange;
                     animation-fill-mode: forwards;
-                    animation-duration: 5s;
+                    animation-duration: .05s;
                     animation-timing-function: linear;
-                    animation-iteration-count: infinite;
+                    animation-iteration-count: 1;
                     animation-delay: 0s;
                     animation-direction: normal;
                     
